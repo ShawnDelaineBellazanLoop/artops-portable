@@ -1,0 +1,5 @@
+{{#_appLogoPath}}
+<a class="navbar-brand" href="{{_appRootPath}}">
+  <img src="{{_appLogoPath}}" alt="logo" class="app-logo" />
+</a>
+{{/_appLogoPath}}
