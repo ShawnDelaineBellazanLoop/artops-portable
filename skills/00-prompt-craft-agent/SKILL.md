@@ -43,7 +43,9 @@ I only produce prompt plans.
 ## Process
 
 1. If `earned-constraints.json` has entries, note every `never_again` phrase —
-   no new variant may use it.
+   no new variant may use it. **Active constraint: `EARNED-2026-06-12-001`** —
+   every variant plan must include a carry-forward note reminding the MAKE operator
+   to attach a reference photo. Variants that would skip this are blocked.
 2. From the concept, derive 3-5 prompt variants, each varying one of:
    lighting, composition/framing, art-style descriptor, mood.
 3. For each variant, write a matching negative prompt.

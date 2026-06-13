@@ -53,16 +53,24 @@ make_response_json + brand-profile.json + ExecutionPlan
 
 ## Scoring Dimensions
 
-| Dimension | Weight | Max | Description |
-|---|---|---|---|
-| `composition` | equal | 10 | Rule of thirds, focal point, framing, depth |
-| `brand_consistency` | equal | 10 | Does the subject look like the reference? Requires `brand-profile.json`. |
-| `trend_alignment` | equal | 10 | Dribbble/portfolio platform trend fit, taggability |
-| `prompt_adherence` | equal | 10 | How faithfully was the prompt followed? |
-| **Total** | | **40** | **Threshold: 28** (70%) |
+The CHECK phase scores each variant across **ten dimensions**, 4 points each. Maximum: 40 points.
 
-> ⚠️ `brand_consistency` scores `unscored (0)` if `brand-profile.json` is empty  
-> OR if no reference photo was used at the MAKE step.  
+| Dimension | Max | Notes |
+|---|---|---|
+| Technical quality | 4 | Resolution, sharpness, no artifacts |
+| Composition | 4 | Rule-of-thirds, focal point, negative space |
+| Lighting | 4 | Consistency, drama, source realism |
+| Color harmony | 4 | Palette coherence, mood match |
+| Subject authenticity | 4 | Subject's actual appearance recognizable |
+| Brand consistency | 4 | Matches `skills/brand-profile.json` signals — **scored 0 without reference photo** |
+| Style execution | 4 | Intended aesthetic correctly applied |
+| Emotional resonance | 4 | Intended mood conveyed |
+| Marketability | 4 | Would buyers engage with this on Dribbble/Adobe Stock? |
+| Innovation | 4 | Novel, distinguishable from generic AI output |
+| **Total** | **40** | **Pass threshold: ≥ 28 AND brand_consistency > 0** |
+
+> ⚠️ `brand_consistency` scores 0 if `skills/brand-profile.json` is empty
+> OR if no reference photo was used at the MAKE step.
 > A zero on this dimension alone is sufficient to cause FAIL.
 
 ---

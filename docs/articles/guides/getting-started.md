@@ -9,7 +9,8 @@ This guide walks you through your first complete ArtOps loop — from concept to
 - [ ] A concept in mind (subject, style, mood — 1–3 sentences)
 - [ ] A reference photo of your subject (strongly recommended — see [why](#why-reference-photos-matter))
 - [ ] Access to at least one AI platform (Google AI Studio, Claude, Gemini, Copilot)
-- [ ] `earned_constraints.json` — start with `{"entries": []}` on first run
+- [ ] `earned_constraints.json` (root) — start with `{"entries": []}` on first run
+- [ ] `skills/brand-profile.json` — populated with your style keywords
 
 ---
 
@@ -18,7 +19,7 @@ This guide walks you through your first complete ArtOps loop — from concept to
 **Platform:** Google AI Studio, Claude, or any capable chat AI
 
 1. Open your AI platform of choice.
-2. Paste the full contents of `00-prompt-craft-agent/SKILL.md` as your first message.
+2. Paste the full contents of `skills/00-prompt-craft-agent/SKILL.md` as your first message.
 3. In the same message, paste:
 
 ```
@@ -81,11 +82,11 @@ Keep the subject's actual appearance recognizable.
 **Platform:** Same AI as Step 1, or any capable chat AI
 
 1. Open a new chat (or continue the same session).
-2. Paste the full contents of `02-portfolio-checker-agent/SKILL.md`.
+2. Paste the full contents of `skills/02-portfolio-checker-agent/SKILL.md`.
 3. Then paste:
    - The full `prompt_plan_json` from Step 1
    - The full `make_response_json` you assembled from Step 2
-   - The contents of `brand-profile.json` (fill it in if empty)
+   - The contents of `skills/brand-profile.json` (fill it in if empty)
 
 4. The agent returns `checker_frame_json` with scores for each variant.
 
@@ -97,7 +98,7 @@ Keep the subject's actual appearance recognizable.
 
 **Platform:** Same AI
 
-1. Paste `03-monetization-reflector-agent/SKILL.md`.
+1. Paste `skills/03-monetization-reflector-agent/SKILL.md`.
 2. Then paste:
    - `checker_frame_json` from Step 3
    - `loop_number: 1` and `max_loops: 3`

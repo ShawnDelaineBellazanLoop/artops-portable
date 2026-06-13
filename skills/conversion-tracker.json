@@ -1,3 +1,28 @@
 {
+  "_note": "ArtOps conversion tracker — log ACCEPT verdicts here after publish. Used by MonetizationReflectorAgent (03) for trend analysis and earned constraint generation.",
+  "_version": "1.0.0",
+  "_schema": {
+    "id": "string — unique entry ID, format: track-YYYY-MM-DD-NNN",
+    "date_published": "ISO 8601",
+    "platform": "Dribbble | Adobe Stock | other",
+    "title": "string",
+    "tags": "string[]",
+    "loop_number": "integer — which loop produced this ACCEPT",
+    "session_id": "string — matches trail session ID",
+    "scores": {
+      "total": "number (0-40)",
+      "brand_consistency": "number (0-4)"
+    },
+    "performance": {
+      "views": "integer",
+      "likes": "integer",
+      "saves": "integer",
+      "comments": "integer",
+      "conversions": "integer — paid downloads / licenses",
+      "revenue_usd": "number"
+    },
+    "earned_constraint_generated": "boolean — did this entry trigger a new earned constraint?",
+    "notes": "string"
+  },
   "entries": []
 }

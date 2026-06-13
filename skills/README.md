@@ -24,7 +24,9 @@ agent will avoid those mistakes next round. That's how it gets better over time.
 
 ## Files
 
-- `earned-constraints.json` — phrasing/composition rules learned over time (starts empty)
-- `brand-profile.json` — optional: describe your visual style here for better
-  brand_consistency scoring
-- `conversion-tracker.json` — log of published pieces and whether they led to paid work
+All agent skills and supporting data files live in the `skills/` directory:
+
+- `skills/earned-constraints.json` — phrasing/composition rules learned over time (starts empty)
+- `skills/brand-profile.json` — describe your visual style here for better brand_consistency scoring
+- `skills/conversion-tracker.json` — log of published pieces and whether they led to paid work
+- Root `earned_constraints.json` — canonical constraint file injected into every PromptCraft call

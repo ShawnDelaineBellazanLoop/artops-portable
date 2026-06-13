@@ -5,16 +5,35 @@ layout: landing
 uid: artops.home
 ---
 
-# ArtOps
+<div class="hero-banner">
+  <div class="hero-badge">v1.0.1 &nbsp;·&nbsp; PMCRO 2.0.0 &nbsp;·&nbsp; DocFX 2.78.5</div>
+  <h1 class="hero-title">ArtOps</h1>
+  <p class="hero-sub">A four-agent cognitive loop for AI self-portrait art.<br>Plan prompts. Generate images. Check portfolio quality. Reflect and monetize.<br>Runs on any AI platform.</p>
+  <div class="hero-ctas">
+    <a class="btn-cta btn-cta-primary" href="articles/guides/getting-started.md">Get Started →</a>
+    <a class="btn-cta btn-cta-ghost" href="articles/agents/index.md">Agent Reference</a>
+    <a class="btn-cta btn-cta-ghost" href="https://github.com/ShawnDelaineBellazanLoop/artops-portable" target="_blank">View on GitHub ↗</a>
+  </div>
+</div>
 
-**A four-agent cognitive loop for AI self-portrait art.**
-
-> Plan prompts. Generate images. Check portfolio quality. Reflect and monetize.  
-> Runs on any AI platform — Google AI Studio, Microsoft Copilot, Claude, Gemini.
-
-[Get Started](articles/guides/getting-started.md) &nbsp;&nbsp; [Agent Reference](articles/agents/index.md) &nbsp;&nbsp; [GitHub](https://github.com/ShawnDelaineBellazanLoop/artops-portable)
-
----
+<div class="stat-grid">
+  <div class="stat-item">
+    <span class="stat-number">4</span>
+    <span class="stat-label">Agents</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">40</span>
+    <span class="stat-label">Max Score</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">28</span>
+    <span class="stat-label">Pass Threshold</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">3</span>
+    <span class="stat-label">Max Loops</span>
+  </div>
+</div>
 
 ## What is ArtOps?
 
@@ -29,7 +48,7 @@ The pack is not a tool. It is a **cognitive protocol** — load each agent's `SK
 | Pass threshold | ≥ 28 / 40 total score |
 | Max loops | 3 (EC-009 enforced) |
 | Framework | PMCRO 2.0.0 · MAF 1.10.0 · MCP 1.4.0 |
-| Runtime | .NET 10 LTS |
+| Skill files | `skills/` directory |
 
 ---
 
@@ -39,124 +58,89 @@ The pack is not a tool. It is a **cognitive protocol** — load each agent's `SK
 Seed Concept  +  earned_constraints.json
         │
         ▼
-┌─────────────────────────────┐
-│  00  PromptCraftAgent        │  ← PLAN   Pattern 2 — Deliberative
-│  Reads constraints first.    │
-│  Produces N distinct prompt  │
-│  variants, each with a       │
-│  testable hypothesis.        │
-└──────────────┬──────────────┘
-               │  prompt_plan_json
-               ▼
-┌─────────────────────────────┐
-│  01  GenerationAgent         │  ← MAKE   Pattern 1 — Reactive
-│  Executes each prompt on     │
-│  your image generator.       │
-│  REQUIRES reference photo.   │
-│  Records raw results.        │
-└──────────────┬──────────────┘
-               │  make_response_json
-               ▼
-┌─────────────────────────────┐
-│  02  PortfolioCheckerAgent   │  ← CHECK  Pattern 3 — Goal-Oriented
-│  Scores each variant across  │
-│  10 dimensions (4 pts each). │
-│  Pass = total ≥ 28/40        │
-│  AND brand_consistency > 0.  │
-└──────────────┬──────────────┘
-               │  checker_frame_json
-               ▼
-┌─────────────────────────────┐
-│  03  MonetizationReflector   │  ← REFLECT Pattern 4 — Learning
-│  Issues verdict.             │
-│  Writes EarnedConstraints.   │
-│  Prepares Dribbble publish   │
-│  payload on ACCEPT.          │
-└──────────────┬──────────────┘
-               │
-    ┌──────────┴──────────┐
-    ▼                     ▼                      ▼
-  ACCEPT              LOOP (→ 00)          ESCALATE
-  Publish.            Re-plan with         Human review.
-                      new constraints.
+┌─────────────────────────────────────────┐
+│  00  PromptCraftAgent          PLAN     │  Pattern 2 — Deliberative
+│  Reads constraints first.               │
+│  Produces N distinct prompt variants,   │
+│  each testing a hypothesis.             │
+└──────────────────┬──────────────────────┘
+                   │  prompt_plan_json
+                   ▼
+┌─────────────────────────────────────────┐
+│  01  GenerationAgent           MAKE     │  Pattern 1 — Reactive
+│  Executes each prompt on your           │
+│  image generator. REQUIRES              │
+│  reference photo. Records results.      │
+└──────────────────┬──────────────────────┘
+                   │  make_response_json
+                   ▼
+┌─────────────────────────────────────────┐
+│  02  PortfolioCheckerAgent     CHECK    │  Pattern 3 — Goal-Oriented
+│  Scores each variant across 10          │
+│  dimensions (4 pts each, 40 max).       │
+│  Pass = total ≥ 28 AND brand > 0.       │
+└──────────────────┬──────────────────────┘
+                   │  checker_frame_json
+                   ▼
+┌─────────────────────────────────────────┐
+│  03  MonetizationReflectorAgent REFLECT │  Pattern 4 — Learning
+│  Issues verdict. Writes constraints.    │
+│  Dribbble payload on ACCEPT.            │
+└──────────────────┬──────────────────────┘
+                   │
+       ┌───────────┼────────────┐
+       ▼           ▼            ▼
+    ACCEPT       LOOP        ESCALATE
+    Publish.   Re-plan with   Human
+               constraints.   review.
 ```
 
 ---
 
 ## The Four Agents
 
-### 00 — PromptCraftAgent · PLAN
-
-[**View Agent →**](articles/agents/00-prompt-craft-agent.md)
-
-Cognitive Pattern 2 — Deliberative. Receives a concept and the accumulated `earned_constraints.json`, then produces a set of fully-specified prompt variants — each testing a distinct hypothesis about what will pass the Checker's rubric. Reads all constraints *before* generating a single variant. Never generates images, never scores.
-
-**Input:** `seed_intent` + `earned_constraints.json`  
-**Output:** `prompt_plan_json`
-
----
-
-### 01 — GenerationAgent · MAKE
-
-[**View Agent →**](articles/agents/01-generation-agent.md)
-
-Cognitive Pattern 1 — Reactive. Takes the `prompt_plan_json` and executes each variant on the configured image generator platform. Assembles raw results into `make_response_json`. Enforces the single most important earned constraint in the system: **a reference photo of the subject must be attached at generation time.**
-
-**Input:** `prompt_plan_json` + reference photo  
-**Output:** `make_response_json`
-
----
-
-### 02 — PortfolioCheckerAgent · CHECK
-
-[**View Agent →**](articles/agents/02-portfolio-checker-agent.md)
-
-Cognitive Pattern 3 — Goal-Oriented. Scores each generated variant across ten dimensions (four points each, forty total). The goal state is `total ≥ 28` AND `brand_consistency > 0`. Never issues verdicts — that is the Reflector's exclusive domain. Issues PASS/FAIL per variant only.
-
-**Input:** `make_response_json` + `brand-profile.json`  
-**Output:** `checker_frame_json`
-
----
-
-### 03 — MonetizationReflectorAgent · REFLECT
-
-[**View Agent →**](articles/agents/03-monetization-reflector-agent.md)
-
-Cognitive Pattern 4 — Learning. The only agent authorized to issue a verdict. Reads `checker_frame_json`, considers loop number against `max_loops`, and issues one of three verdicts. On ACCEPT, produces a Dribbble publish payload. On LOOP, writes new `earned_constraints` entries to prevent repeating the failure mode. On ESCALATE, documents why the loop could not converge.
-
-**Input:** `checker_frame_json` + loop metadata  
-**Output:** `reflector_output` (verdict: ACCEPT | LOOP | ESCALATE)
+<div class="agent-grid">
+  <a class="agent-card" href="articles/agents/00-prompt-craft-agent.md">
+    <div class="card-number">00 · PLAN</div>
+    <div class="card-title">PromptCraftAgent</div>
+    <div class="card-phase-badge badge-plan">Deliberative</div>
+    <div class="card-desc">Reads earned constraints first. Produces N distinct prompt variants, each testing a hypothesis. Never generates images.</div>
+    <div class="card-io"><span class="io-label">IN</span> seed_intent + constraints &nbsp;·&nbsp; <span class="io-label">OUT</span> prompt_plan_json</div>
+  </a>
+  <a class="agent-card" href="articles/agents/01-generation-agent.md">
+    <div class="card-number">01 · MAKE</div>
+    <div class="card-title">GenerationAgent</div>
+    <div class="card-phase-badge badge-make">Reactive</div>
+    <div class="card-desc">Executes prompts on your image generator. Requires a reference photo. Records raw results without interpretation.</div>
+    <div class="card-io"><span class="io-label">IN</span> prompt_plan_json + photo &nbsp;·&nbsp; <span class="io-label">OUT</span> make_response_json</div>
+  </a>
+  <a class="agent-card" href="articles/agents/02-portfolio-checker-agent.md">
+    <div class="card-number">02 · CHECK</div>
+    <div class="card-title">PortfolioCheckerAgent</div>
+    <div class="card-phase-badge badge-check">Goal-Oriented</div>
+    <div class="card-desc">Scores each variant across 10 dimensions (4 pts each). Issues PASS/FAIL per variant. Never issues verdicts.</div>
+    <div class="card-io"><span class="io-label">IN</span> make_response_json + brand profile &nbsp;·&nbsp; <span class="io-label">OUT</span> checker_frame_json</div>
+  </a>
+  <a class="agent-card" href="articles/agents/03-monetization-reflector-agent.md">
+    <div class="card-number">03 · REFLECT</div>
+    <div class="card-title">MonetizationReflectorAgent</div>
+    <div class="card-phase-badge badge-reflect">Learning</div>
+    <div class="card-desc">The only agent authorized to issue a verdict. Writes earned constraints on LOOP. Prepares Dribbble payload on ACCEPT.</div>
+    <div class="card-io"><span class="io-label">IN</span> checker_frame_json &nbsp;·&nbsp; <span class="io-label">OUT</span> verdict + constraints</div>
+  </a>
+</div>
 
 ---
 
 ## Earned Constraints
 
-The loop learns. Every LOOP verdict produces `earned_constraints` — crystallized rules written from real failure data that prevent the same mistake from occurring in future cycles. These are not guidelines; they are laws.
+The loop learns. Every LOOP verdict crystallizes a new `never_again` rule that prevents the same mistake from recurring.
 
-**Current active constraints:**
-
-| ID | Source | Rule |
+| ID | Rule | Source |
 |---|---|---|
-| `EARNED-2026-06-12-001` | Chase session · Loop 1 | Reference photo of the subject must be attached at generation time. Text-only generation produces `brand_consistency = 0`, which makes the total score unpassable. |
+| `EARNED-2026-06-12-001` | Reference photo must be attached at generation time. Text-only generation produces `brand_consistency = 0`, making the score unpassable. | Chase session · Loop 1 · Score 24/40 · LOOP |
 
 [Full constraint documentation →](articles/guides/earned-constraints.md)
-
----
-
-## Platform Compatibility
-
-ArtOps is platform-agnostic. Each agent is a `SKILL.md` file — a structured system prompt that works in any capable AI chat interface.
-
-| Platform | PLAN (00) | MAKE (01) | CHECK (02) | REFLECT (03) |
-|---|---|---|---|---|
-| Google AI Studio | ✅ Gemini 2.5 Pro | — | ✅ | ✅ |
-| Microsoft Copilot | ✅ | ✅ Image Creator | ✅ | ✅ |
-| Claude (Anthropic) | ✅ | — | ✅ | ✅ |
-| Gemini CLI | ✅ | — | ✅ | ✅ |
-| Adobe Firefly | — | ✅ | — | — |
-| DALL-E / GPT-4o | — | ✅ | — | — |
-
-Cross-platform workflow guide → [Running ArtOps Across Platforms](articles/guides/cross-platform.md)
 
 ---
 
@@ -167,23 +151,38 @@ Cross-platform workflow guide → [Running ArtOps Across Platforms](articles/gui
 git clone https://github.com/ShawnDelaineBellazanLoop/artops-portable
 cd artops-portable
 
-# 2. Initialize constraints (first run — empty)
-# earned_constraints.json is already in the repo as {"entries":[]}
+# 2. Fill in your brand profile
+# Edit skills/brand-profile.json — add style keywords, color palette, avoid list
 
-# 3. Open 00-prompt-craft-agent/SKILL.md in your AI platform
-# Paste contents as system prompt, add your concept, run
+# 3. Open skills/00-prompt-craft-agent/SKILL.md in your AI platform
+# Paste as system prompt, add earned_constraints.json + your concept
 
 # 4. Carry prompt_plan_json to GenerationAgent
-# ATTACH a reference photo of your subject — this is required
+# ATTACH a reference photo of your subject — required by EARNED-2026-06-12-001
 
 # 5. Carry make_response_json to PortfolioCheckerAgent
-# Review checker_frame_json scores
+# Include skills/brand-profile.json contents
 
 # 6. Carry checker_frame_json to MonetizationReflectorAgent
 # Act on verdict: ACCEPT → publish | LOOP → re-plan | ESCALATE → review
 ```
 
 [Full step-by-step guide →](articles/guides/getting-started.md)
+
+---
+
+## Platform Compatibility
+
+| Platform | PLAN (00) | MAKE (01) | CHECK (02) | REFLECT (03) |
+|---|---|---|---|---|
+| Google AI Studio | ✅ Gemini 2.5 Pro | — | ✅ | ✅ |
+| Microsoft Copilot | ✅ | ✅ Image Creator | ✅ | ✅ |
+| Claude (Anthropic) | ✅ | — | ✅ | ✅ |
+| Gemini CLI | ✅ | — | ✅ | ✅ |
+| Adobe Firefly | — | ✅ | — | — |
+| DALL-E / GPT-4o | — | ✅ | — | — |
+
+[Cross-platform workflow guide →](articles/guides/cross-platform.md)
 
 ---
 
@@ -199,4 +198,4 @@ cd artops-portable
 
 ---
 
-*ArtOps Portable v1.0.0 · Built on PMCRO 2.0.0 · Tooensure LLC · 2026*
+*ArtOps Portable v1.0.1 · Built on PMCRO 2.0.0 · Tooensure LLC · 2026*

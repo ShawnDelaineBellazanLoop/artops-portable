@@ -47,7 +47,7 @@ The loop doesn't care which platform runs which phase — it cares about the typ
                                                        │ (assemble make_response_json)
 [Claude or Google AI Studio]                           │
   ├── Load: 02-portfolio-checker-agent/SKILL.md        │
-  ├── Input: make_response_json + brand-profile.json   │
+  ├── Input: make_response_json + skills/brand-profile.json   │
   └── Output: checker_frame_json  ───────────────────┐│
                                                       ││
 [Claude or Google AI Studio]                          ││

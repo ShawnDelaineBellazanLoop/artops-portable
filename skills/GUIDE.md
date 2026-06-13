@@ -13,8 +13,8 @@ Everything below assumes zero prior experience with the pack.
 
 ## Quick Start (TL;DR)
 
-1. Unzip `artops-portable/`, fill in `brand-profile.json` with a few words
-   about your style.
+1. Clone or unzip the repo. All agent skill files are in `skills/`.
+   Fill in `skills/brand-profile.json` with a few words about your style.
 2. Take a decent selfie/portrait photo — you'll reuse it throughout.
 3. Run the four agents in order, copying each JSON output into the next:
    `00-prompt-craft` → `01-generation` → `02-portfolio-checker` →
@@ -24,7 +24,7 @@ Everything below assumes zero prior experience with the pack.
 5. On **ACCEPT**, review the drafted post — publishing is always manual.
 
 Everything from here is the detail behind those five steps. See also
-`CHEATSHEET.md` for a one-page quick reference to keep open while you work.
+`skills/CHEATSHEET.md` for a one-page quick reference to keep open while you work.
 
 ---
 
@@ -46,12 +46,11 @@ is a clean handoff to the next step.
 
 ## 2. Setup (5 minutes)
 
-1. Unzip the `artops-portable` folder somewhere you'll remember.
-2. Open `brand-profile.json` and jot down a few words about your visual style
+1. Clone or unzip the repo. All agent skill files are in `skills/`.
+2. Open `skills/brand-profile.json` and jot down a few words about your visual style
    (e.g. *"warm tones, soft film grain, minimal backgrounds"*). Optional, but
-   it makes the Check step's `brand_consistency` score meaningful instead of
-   `unscored`.
-3. Leave `earned-constraints.json` and `conversion-tracker.json` as-is —
+   it makes the Check step's `brand_consistency` score meaningful instead of `unscored`.
+3. Leave `skills/earned-constraints.json` and `skills/conversion-tracker.json` as-is —
    they fill in automatically as you use the loop.
 4. Take a decent selfie or portrait photo now (natural light, neutral
    background works best). You'll reuse this across rounds — see Section 3.

@@ -1,7 +1,60 @@
 {
-  "style_keywords": [],
-  "color_palette": [],
-  "recurring_themes": [],
-  "avoid": [],
-  "reference_pieces": []
+  "_note": "ArtOps brand profile — injected into PortfolioCheckerAgent (02) at the CHECK phase. Fill in per-subject before each session.",
+  "_version": "1.0.0",
+  "_last_updated": "2026-06-12",
+  "_subject": "ArtOps product identity / Shawn Delaine Bellazano",
+
+  "style_keywords": [
+    "cinematic",
+    "editorial",
+    "dark atmospheric",
+    "high contrast",
+    "technical precision",
+    "modern luxury"
+  ],
+
+  "color_palette": [
+    "#0a0b0f — void black (primary background)",
+    "#7c3aed — violet (primary accent / signal color)",
+    "#06b6d4 — cyan (secondary accent)",
+    "#f0f6fc — white-ice (text / light elements)",
+    "#f59e0b — amber (earned constraint / warning states)"
+  ],
+
+  "recurring_themes": [
+    "cognitive loops and feedback cycles",
+    "agent autonomy and phase isolation",
+    "self-portrait as portfolio asset",
+    "monospaced type as aesthetic signal",
+    "dark mode as default state"
+  ],
+
+  "avoid": [
+    "painterly or watercolor aesthetics",
+    "bright white backgrounds",
+    "generic stock-photo lighting",
+    "emoji or cartoon elements",
+    "serif headline fonts",
+    "warm orange-yellow color casts",
+    "busy or cluttered compositions",
+    "visible AI artifacts or distortions"
+  ],
+
+  "reference_pieces": [
+    {
+      "id": "ref-001",
+      "description": "ArtOps logo SVG — orbital ring, four phase nodes, violet/cyan gradient, monospace wordmark",
+      "path": "docs/images/artops-logo.svg",
+      "role": "primary brand mark — use as reference for all logo-adjacent generation"
+    }
+  ],
+
+  "platform_targets": [
+    "Dribbble",
+    "Adobe Stock",
+    "GitHub README header",
+    "DocFX site navbar"
+  ],
+
+  "subject_notes": "When generating self-portrait assets: attach reference photo of subject at MAKE step — this is EARNED-2026-06-12-001 and is non-negotiable. brand_consistency = 0 without reference photo."
 }

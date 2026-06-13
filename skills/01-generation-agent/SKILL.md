@@ -25,6 +25,18 @@ written. I do not judge quality, skip variants, or write my own prompts.
 ## Inputs
 
 - `prompt_plan_json` from PromptCraftAgent
+- **Reference photo of the subject** — attach at every generation call. This is a
+  crystallized EarnedConstraint (`EARNED-2026-06-12-001`). Text-only generation
+  produces `brand_consistency = 0`, which alone drops the total below the 28/40
+  portfolio threshold. Without a reference photo, the variant cannot pass.
+
+## Cross-Platform Note
+
+If the image-generation tool doesn't read SKILL.md format directly (e.g.
+Copilot, Firefly, DALL-E), you act as this agent's hands: take each variant's
+`prompt` / `negative_prompt` from `prompt_plan_json`, generate manually with
+your reference photo attached, then assemble the results into
+`make_response_json` yourself using the schema below.
 
 ## Process
 

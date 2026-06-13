@@ -11,6 +11,59 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.0.3] — 2026-06-12 (patch)
+
+**Artifact source integration, SKILL.md hardening, Skill Files nav page.**
+
+### Added
+- `docs/articles/skills.md` — new nav page surfacing all four SKILL.md files with direct GitHub links, supporting data file table, phase isolation law, and active constraint table
+- `docs/toc.yml` — new **Skill Files** nav entry between Agent Reference and Guides
+- `skills/01-generation-agent/SKILL.md` — added reference photo earned constraint note to Inputs section and Cross-Platform Note
+- `skills/00-prompt-craft-agent/SKILL.md` — embedded `EARNED-2026-06-12-001` active constraint directly in Process step 1
+
+### Decision: Artifacts vs SKILL.md files
+- The seven Claude artifact URLs contained the original source SKILL.md content that matches what’s on disk in `skills/`. The artifacts were the generative session outputs; `skills/` is the canonical disk representation. No duplicate files needed — the artifacts are already materialized as SKILL.md files. The `skills.md` docs page now links to them on GitHub so the site surfaces them properly.
+
+---
+
+## [1.0.2] — 2026-06-12 (patch)
+
+**Path reference fixes, scoring rubric correction, design system rebuild.**
+
+### Fixed
+- All `artops-portable/` folder name references updated to `skills/` across `GUIDE.md`, `README.md`, `getting-started.md`, `cross-platform.md`
+- `02-portfolio-checker-agent.md` scoring rubric corrected: was 4 dimensions × 10pts; now correctly 10 dimensions × 4pts (matching agent index and run log evidence)
+- All `brand-profile.json` path references updated to `skills/brand-profile.json`
+- All agent SKILL.md path references updated to include `skills/` prefix
+
+### Changed
+- `docs/index.md`: rewritten with proper HTML component blocks (`hero-banner`, `stat-grid`, `agent-grid`, `agent-card`) that match the CSS class hooks
+- `docs/artops-template/public/main.css`: full design system rebuild — hero badge, CTA buttons, agent card grid with phase badges and IO labels, stat grid, responsive breakpoints, enhanced light mode
+
+### Added
+- `hero-badge`, `hero-title`, `hero-sub`, `hero-ctas`, `btn-cta-primary`, `btn-cta-ghost` CSS components
+- `agent-grid`, `card-number`, `card-phase-badge`, `card-desc`, `card-io`, `io-label` CSS components
+- Proper responsive collapse: stat grid 4→2 cols on mobile, agent grid 2→1 col on mobile, CTA buttons stack vertically
+
+---
+
+## [1.0.1] — 2026-06-12 (patch)
+
+**Post-launch corrections and data layer population.**
+
+### Fixed
+- `main.js` footer badge: `.NET 8` corrected to `.NET 10 LTS` (stack version mismatch)
+- `docfx.json`: wired `_appLogoPath` and `_appFaviconPath` to `images/artops-logo.svg` (logo existed but was not referenced in globalMetadata)
+
+### Changed
+- `brand-profile.json`: populated from empty stub to full brand token set — style keywords, color palette, recurring themes, avoid list, reference pieces, platform targets
+- `conversion-tracker.json`: populated with JSON schema definition so MonetizationReflectorAgent has a typed target for ACCEPT logging
+
+### Added
+- PromptCraftAgent run log entry: ArtOps logo generation session (5 variants, EARNED-2026-06-12-001 applied)
+
+---
+
 ## [1.0.0] — 2026-06-12
 
 **Initial production release of ArtOps Portable.**  

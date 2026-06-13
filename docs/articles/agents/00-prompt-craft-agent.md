@@ -98,6 +98,7 @@ Load `SKILL.md` from `00-prompt-craft-agent/SKILL.md` as a system prompt or firs
 | Date | Concept | Constraints Applied | Verdict |
 |---|---|---|---|
 | 2026-06-12 | Chase (German Shepherd / Paw Patrol) — 4 variants | None (first run) | LOOP — see [earned constraints](../guides/earned-constraints.md) |
+| 2026-06-12 | ArtOps product logo — orbital ring, four phase nodes, monospace wordmark — 5 variants | EARNED-2026-06-12-001 | Delivered `prompt_plan_json` — awaiting MAKE execution |
 
 ---
 

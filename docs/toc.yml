@@ -5,6 +5,9 @@
   href: articles/agents/
   homepage: articles/agents/index.md
 
+- name: Skill Files
+  href: articles/skills.md
+
 - name: Guides
   href: articles/guides/
   homepage: articles/guides/getting-started.md
