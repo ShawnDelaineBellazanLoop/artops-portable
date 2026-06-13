@@ -6,7 +6,7 @@ uid: artops.home
 ---
 
 <div class="hero-banner">
-  <div class="hero-badge">v1.0.5 &nbsp;·&nbsp; PMCRO 2.0.0 &nbsp;·&nbsp; DocFX 2.78.5</div>
+  <div class="hero-badge">v1.0.6 &nbsp;·&nbsp; PMCRO 2.0.0 &nbsp;·&nbsp; DocFX 2.78.5</div>
   <h1 class="hero-title">ArtOps</h1>
   <p class="hero-sub">A four-agent cognitive loop for AI self-portrait art.<br>Plan prompts. Generate images. Check portfolio quality. Reflect and monetize.<br>Runs on any AI platform.</p>
   <div class="hero-ctas">
@@ -54,13 +54,17 @@ The pack is not a tool. It is a **cognitive protocol** — load each agent's `SK
 
 ## The Loop
 
-![ArtOps Cognitive Loop](images/loop-flow.svg)
+<div class="diagram-wrap">
+  <img src="images/loop-flow.svg" alt="ArtOps Cognitive Loop — four-agent chain from seed concept to verdict" class="diagram-img">
+</div>
 
 ---
 
 ## The Four Agents
 
-![Agent Chain](images/agent-chain.svg)
+<div class="diagram-wrap">
+  <img src="images/agent-chain.svg" alt="Agent chain: PromptCraftAgent → GenerationAgent → PortfolioCheckerAgent → MonetizationReflectorAgent" class="diagram-img">
+</div>
 
 <div class="agent-grid">
   <a class="agent-card" href="articles/agents/00-prompt-craft-agent.md">

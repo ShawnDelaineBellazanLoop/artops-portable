@@ -11,6 +11,19 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.0.6] — 2026-06-12 (patch)
+
+**Diagrams now render in DocFX.**
+
+### Fixed
+- `docs/images/agent-chain.svg` — removed fixed `width="680" height="160"` from the SVG root; now only `viewBox` is set, making the diagram responsive and fluid inside DocFX's container.
+- `docs/artops-template/public/main.css` — added `article img`, `article figure img`, `.content img` block with `max-width:100%`, `height:auto`, `display:block`, border/radius styling. Added `.diagram-wrap` / `.diagram-img` CSS classes for DocFX landing layout context where `article` selector doesn't apply. These are the selectors that `index.md`'s `<div class="diagram-wrap"><img class="diagram-img" ...>` already uses.
+
+### Root cause summary
+Two bugs compounded: (1) `agent-chain.svg` had explicit `width`/`height` px dimensions that caused the SVG to render at 680px fixed — overflowing the DocFX content column and getting `overflow:hidden` clipped to invisible. (2) No `max-width:100%` or `.diagram-img` CSS existed, so even if the image loaded, it had no sizing contract.
+
+---
+
 ## [1.0.5] — 2026-06-12 (patch)
 
 **SVG diagrams replace ASCII art. GitHub release workflow added.**
