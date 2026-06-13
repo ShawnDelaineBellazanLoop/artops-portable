@@ -11,6 +11,15 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.0.9] — 2026-06-12 (patch)
+
+**Dead link fix on the Skill Files page.**
+
+### Fixed
+- `docs/articles/skills.md` — the `brand-profile.json` row in the Supporting Data Files table linked to `../guides/earned-constraints.md`, a page with no brand-profile content or matching anchor. Now links directly to `skills/brand-profile.json` in the repo and to the Getting Started guide, which contains the actual brand-profile setup step.
+
+---
+
 ## [1.0.8] — 2026-06-12 (patch)
 
 **TIER 2 → TIER 3 sync: earned constraints crystallized, logo SVG violation fixed.**
@@ -104,7 +113,7 @@ DocFX modern renders SVG inline at full resolution with no font/encoding issues.
 - `skills/00-prompt-craft-agent/SKILL.md` — embedded `EARNED-2026-06-12-001` active constraint directly in Process step 1
 
 ### Decision: Artifacts vs SKILL.md files
-- The seven Claude artifact URLs contained the original source SKILL.md content that matches what’s on disk in `skills/`. The artifacts were the generative session outputs; `skills/` is the canonical disk representation. No duplicate files needed — the artifacts are already materialized as SKILL.md files. The `skills.md` docs page now links to them on GitHub so the site surfaces them properly.
+- The seven Claude artifact URLs contained the original source SKILL.md content that matches what's on disk in `skills/`. The artifacts were the generative session outputs; `skills/` is the canonical disk representation. No duplicate files needed — the artifacts are already materialized as SKILL.md files. The `skills.md` docs page now links to them on GitHub so the site surfaces them properly.
 
 ---
 

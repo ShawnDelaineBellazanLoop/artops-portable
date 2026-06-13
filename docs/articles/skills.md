@@ -43,7 +43,7 @@ These files live in `skills/` alongside the SKILL.md files:
 
 | File | Purpose | Starts As |
 |---|---|---|
-| `brand-profile.json` | Subject brand tokens for `brand_consistency` scoring | Populated — see [brand profile](../guides/earned-constraints.md) |
+| [`brand-profile.json`](https://github.com/ShawnDelaineBellazanLoop/artops-portable/blob/main/skills/brand-profile.json) | Subject brand tokens for `brand_consistency` scoring | Populated — see [Getting Started](../guides/getting-started.md) |
 | `earned-constraints.json` | Crystallized never_again rules from prior loops | Synced from root `earned_constraints.json` |
 | `conversion-tracker.json` | ACCEPT log — tracks published pieces and revenue | Empty entries array with typed schema |
 | `CHEATSHEET.md` | One-page quick reference — keep open while running | Static reference |
