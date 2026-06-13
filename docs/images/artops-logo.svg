@@ -1,0 +1,32 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+	<rect width="512" height="512" fill="#0a0b0f"/>
+	<defs>
+		<linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+			<stop offset="0%" stop-color="#7c3aed"/>
+			<stop offset="100%" stop-color="#06b6d4"/>
+		</linearGradient>
+	</defs>
+	<!-- Orbital ring -->
+	<circle cx="256" cy="200" r="100" stroke="url(#ringGradient)" stroke-width="6" fill="none"/>
+	<!-- Directional arrow -->
+	<path d="M356 200 l-10 -5 l0 10 z" fill="url(#ringGradient)"/>
+	<!-- Inner dashed orbit -->
+	<circle cx="256" cy="200" r="85" stroke="#1e293b" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+	<!-- Node dots -->
+	<g fill="none" stroke="url(#ringGradient)" stroke-width="2">
+		<circle cx="256" cy="100" r="8" fill="#f0f6fc"/>
+		<circle cx="256" cy="100" r="14"/>
+		<circle cx="356" cy="200" r="8" fill="#f0f6fc"/>
+		<circle cx="356" cy="200" r="14"/>
+		<circle cx="256" cy="300" r="8" fill="#f0f6fc"/>
+		<circle cx="256" cy="300" r="14"/>
+		<circle cx="156" cy="200" r="8" fill="#f0f6fc"/>
+		<circle cx="156" cy="200" r="14"/>
+	</g>
+	<!-- Wordmark -->
+	<text x="50%" y="400" text-anchor="middle" font-family="monospace" font-weight="900" font-size="40" fill="#f0f6fc">ARTOPS</text>
+	<!-- Gradient underline -->
+	<rect x="156" y="410" width="200" height="3" fill="url(#ringGradient)"/>
+	<!-- Tagline -->
+	<text x="50%" y="440" text-anchor="middle" font-family="monospace" font-size="16" fill="#9ca3af">COGNITIVE LOOP</text>
+</svg>

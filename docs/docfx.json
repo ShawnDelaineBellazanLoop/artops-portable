@@ -13,6 +13,12 @@
       }
     ],
 
+    "resource": [
+      {
+        "files": [ "images/**" ]
+      }
+    ],
+
     "output": "_site",
 
     "template": [
@@ -26,6 +32,8 @@
     "globalMetadata": {
       "_appTitle":    "ArtOps — AI Self-Portrait Agent Pack",
       "_appName":     "ArtOps",
+      "_appLogoPath": "images/artops-logo.svg",
+      "_appFaviconPath": "images/artops-logo.svg",
       "_appFooter":   "© 2026 Tooensure LLC — Proprietary Cognitive Asset · Built on PMCRO 2.0.0",
       "_enableSearch":        true,
       "_enableNewTab":        true,
