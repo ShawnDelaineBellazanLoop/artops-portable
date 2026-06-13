@@ -1,0 +1,98 @@
+<svg viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#484f58"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10b981"/>
+    </marker>
+    <marker id="arr-y" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <rect width="640" height="520" rx="12" fill="#0d1117"/>
+
+  <!-- INPUT -->
+  <rect x="120" y="14" width="400" height="44" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <rect x="120" y="14" width="400" height="2.5" rx="1.25" fill="url(#grad)"/>
+  <text x="320" y="31" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="10" fill="#8b949e">seed_intent  +  earned_constraints.json</text>
+  <line x1="320" y1="58" x2="320" y2="80" stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 00 -->
+  <rect x="80" y="84" width="480" height="52" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="80" y="84" width="480" height="2.5" rx="1.25" fill="#22d3ee" opacity="0.6"/>
+  <rect x="96" y="96" width="36" height="16" rx="8" fill="rgba(6,182,212,0.14)" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+  <text x="114" y="107.5" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#22d3ee">PLAN</text>
+  <text x="140" y="107.5" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#484f58">· 00</text>
+  <text x="420" y="107.5" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#484f58">Pattern 2 — Deliberative</text>
+  <text x="96" y="126" font-family="'Inter',system-ui,sans-serif" font-size="13" font-weight="700" fill="#f0f6fc">PromptCraftAgent</text>
+  <text x="420" y="126" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="9" fill="#a78bfa">→ prompt_plan_json</text>
+  <line x1="320" y1="136" x2="320" y2="158" stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 01 -->
+  <rect x="80" y="162" width="480" height="52" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="80" y="162" width="480" height="2.5" rx="1.25" fill="#c084fc" opacity="0.6"/>
+  <rect x="96" y="174" width="36" height="16" rx="8" fill="rgba(168,85,247,0.14)" stroke="rgba(168,85,247,0.3)" stroke-width="1"/>
+  <text x="114" y="185.5" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#c084fc">MAKE</text>
+  <text x="140" y="185.5" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#484f58">· 01</text>
+  <text x="420" y="185.5" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#484f58">Pattern 1 — Reactive</text>
+  <text x="96" y="204" font-family="'Inter',system-ui,sans-serif" font-size="13" font-weight="700" fill="#f0f6fc">GenerationAgent</text>
+  <text x="420" y="204" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="9" fill="#a78bfa">→ make_response_json</text>
+  <line x1="320" y1="214" x2="320" y2="236" stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 02 -->
+  <rect x="80" y="240" width="480" height="52" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="80" y="240" width="480" height="2.5" rx="1.25" fill="#fbbf24" opacity="0.6"/>
+  <rect x="96" y="252" width="42" height="16" rx="8" fill="rgba(245,158,11,0.14)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+  <text x="117" y="263.5" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#fbbf24">CHECK</text>
+  <text x="146" y="263.5" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#484f58">· 02</text>
+  <text x="416" y="263.5" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#484f58">Pattern 3 — Goal-Oriented</text>
+  <text x="96" y="282" font-family="'Inter',system-ui,sans-serif" font-size="13" font-weight="700" fill="#f0f6fc">PortfolioCheckerAgent</text>
+  <text x="416" y="282" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="9" fill="#a78bfa">→ checker_frame_json</text>
+  <line x1="320" y1="292" x2="320" y2="314" stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 03 -->
+  <rect x="80" y="318" width="480" height="52" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="80" y="318" width="480" height="2.5" rx="1.25" fill="#34d399" opacity="0.6"/>
+  <rect x="96" y="330" width="52" height="16" rx="8" fill="rgba(16,185,129,0.14)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+  <text x="122" y="341.5" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" font-weight="700" fill="#34d399">REFLECT</text>
+  <text x="156" y="341.5" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#484f58">· 03</text>
+  <text x="400" y="341.5" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#484f58">Pattern 4 — Learning</text>
+  <text x="96" y="360" font-family="'Inter',system-ui,sans-serif" font-size="13" font-weight="700" fill="#f0f6fc">MonetizationReflectorAgent</text>
+  <text x="400" y="360" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="9" fill="#a78bfa">→ reflector_output</text>
+
+  <!-- stem -->
+  <line x1="320" y1="370" x2="320" y2="396" stroke="#484f58" stroke-width="1.5"/>
+  <line x1="120" y1="396" x2="520" y2="396" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- ACCEPT -->
+  <line x1="120" y1="396" x2="120" y2="418" stroke="#10b981" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <rect x="40" y="424" width="160" height="52" rx="8" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" stroke-width="1.5"/>
+  <text x="120" y="447" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="12" font-weight="700" fill="#10b981">ACCEPT</text>
+  <text x="120" y="463" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9.5" fill="#8b949e">publish + log</text>
+
+  <!-- LOOP -->
+  <line x1="320" y1="396" x2="320" y2="418" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr-y)"/>
+  <rect x="240" y="424" width="160" height="52" rx="8" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.3)" stroke-width="1.5"/>
+  <text x="320" y="447" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="12" font-weight="700" fill="#f59e0b">LOOP</text>
+  <text x="320" y="463" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9.5" fill="#8b949e">update constraints → [00]</text>
+
+  <!-- ESCALATE -->
+  <line x1="520" y1="396" x2="520" y2="418" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <rect x="440" y="424" width="160" height="52" rx="8" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.3)" stroke-width="1.5"/>
+  <text x="520" y="447" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="12" font-weight="700" fill="#ef4444">ESCALATE</text>
+  <text x="520" y="463" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9.5" fill="#8b949e">human review</text>
+
+  <!-- LOOP arrow back -->
+  <path d="M400 450 Q598 450 598 110 Q598 36 560 36" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arr-y)" opacity="0.45"/>
+
+  <text x="320" y="508" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#30363d">ArtOps Frame Chain · PMCRO 2.0.0</text>
+</svg>

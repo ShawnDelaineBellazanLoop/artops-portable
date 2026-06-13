@@ -26,18 +26,9 @@ uid: artops.agents.prompt-craft
 
 ## Phase Frame
 
-```
-Seed Concept + earned_constraints.json
-        │
-        ▼
-  Constraint Pre-Check (read earned_constraints FIRST)
-        │
-        ▼
-  Deliberate: generate N prompt variants, each testing a distinct hypothesis
-        │
-        ▼
-  prompt_plan_json  ──▶  GenerationAgent
-```
+<div class="diagram-wrap">
+  <img src="../../images/agent-00-flow.svg" alt="PromptCraftAgent phase flow: constraint pre-check, deliberate, output" class="diagram-img">
+</div>
 
 ---
 

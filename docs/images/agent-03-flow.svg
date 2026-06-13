@@ -1,0 +1,66 @@
+<svg viewBox="0 0 600 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#484f58"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10b981"/>
+    </marker>
+    <marker id="arr-y" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+  <rect width="600" height="370" rx="12" fill="#0d1117"/>
+
+  <!-- Step 1 -->
+  <rect x="40" y="16" width="520" height="52" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="40" y="16" width="520" height="2.5" rx="1.25" fill="#34d399" opacity="0.5"/>
+  <text x="300" y="37" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="12.5" font-weight="700" fill="#f0f6fc">Pattern Analysis</text>
+  <text x="300" y="55" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" fill="#8b949e">What failed · why · how many consecutive loops · loop_number vs max_loops</text>
+  <line x1="300" y1="68" x2="300" y2="90" stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 2 -->
+  <rect x="40" y="94" width="520" height="52" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="40" y="94" width="520" height="2.5" rx="1.25" fill="#34d399" opacity="0.5"/>
+  <text x="300" y="115" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="12.5" font-weight="700" fill="#f0f6fc">Crystallize EarnedConstraints</text>
+  <text x="300" y="133" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" fill="#8b949e">Write never_again rules into earned_constraints.json on LOOP verdict</text>
+  <line x1="300" y1="146" x2="300" y2="168" stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 3 — Verdict -->
+  <rect x="40" y="172" width="520" height="40" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="40" y="172" width="520" height="2.5" rx="1.25" fill="#34d399" opacity="0.5"/>
+  <text x="300" y="196" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="12.5" font-weight="700" fill="#f0f6fc">Issue Verdict</text>
+
+  <!-- Branch bar -->
+  <line x1="300" y1="212" x2="300" y2="228" stroke="#484f58" stroke-width="1.5"/>
+  <line x1="100" y1="228" x2="500" y2="228" stroke="#30363d" stroke-width="1.5"/>
+  <line x1="100" y1="228" x2="100" y2="250" stroke="#10b981" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <line x1="300" y1="228" x2="300" y2="250" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr-y)"/>
+  <line x1="500" y1="228" x2="500" y2="250" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arr-r)"/>
+
+  <!-- ACCEPT -->
+  <rect x="24" y="256" width="152" height="80" rx="8" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" stroke-width="1.5"/>
+  <text x="100" y="280" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="12" font-weight="700" fill="#10b981">ACCEPT</text>
+  <text x="100" y="298" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" fill="#8b949e">Dribbble payload</text>
+  <text x="100" y="313" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" fill="#8b949e">TYPE1_PENDING</text>
+  <text x="100" y="328" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" fill="#8b949e">dispatch ready</text>
+
+  <!-- LOOP -->
+  <rect x="224" y="256" width="152" height="80" rx="8" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.3)" stroke-width="1.5"/>
+  <text x="300" y="280" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="12" font-weight="700" fill="#f59e0b">LOOP</text>
+  <text x="300" y="298" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" fill="#8b949e">Write constraints</text>
+  <text x="300" y="313" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" fill="#8b949e">→ PromptCraftAgent</text>
+  <text x="300" y="328" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" fill="#484f58">max 3 (EC-009)</text>
+
+  <!-- ESCALATE -->
+  <rect x="424" y="256" width="152" height="80" rx="8" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.3)" stroke-width="1.5"/>
+  <text x="500" y="280" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="12" font-weight="700" fill="#ef4444">ESCALATE</text>
+  <text x="500" y="298" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" fill="#8b949e">Human review</text>
+  <text x="500" y="313" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" fill="#8b949e">loop_number ≥</text>
+  <text x="500" y="328" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9" fill="#8b949e">max_loops</text>
+
+  <text x="300" y="360" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#30363d">MonetizationReflectorAgent · Pattern 4 — Learning</text>
+</svg>

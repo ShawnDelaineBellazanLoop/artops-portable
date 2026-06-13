@@ -1,0 +1,52 @@
+<svg viewBox="0 0 560 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#484f58"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10b981"/>
+    </marker>
+    <marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+  <rect width="560" height="320" rx="12" fill="#0d1117"/>
+
+  <!-- Step 1 -->
+  <rect x="40" y="16" width="480" height="52" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="40" y="16" width="480" height="2.5" rx="1.25" fill="#fbbf24" opacity="0.5"/>
+  <text x="280" y="37" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="12.5" font-weight="700" fill="#f0f6fc">Score Four Dimensions per Variant</text>
+  <text x="280" y="55" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" fill="#8b949e">10 dimensions · 4 pts each · 40 max — evidence-backed, no hallucination</text>
+  <line x1="280" y1="68" x2="280" y2="90" stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 2 -->
+  <rect x="40" y="94" width="480" height="52" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="40" y="94" width="480" height="2.5" rx="1.25" fill="#fbbf24" opacity="0.5"/>
+  <text x="280" y="115" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="12.5" font-weight="700" fill="#f0f6fc">Apply Threshold</text>
+  <text x="280" y="133" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="10.5" fill="#8b949e">PASS = total ≥ 28/40  AND  brand_consistency scored &gt; 0</text>
+  <line x1="280" y1="146" x2="280" y2="168" stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Branch bar -->
+  <line x1="140" y1="168" x2="420" y2="168" stroke="#30363d" stroke-width="1.5"/>
+  <line x1="140" y1="168" x2="140" y2="190" stroke="#10b981" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <line x1="420" y1="168" x2="420" y2="190" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arr-r)"/>
+
+  <!-- PASS -->
+  <rect x="52" y="196" width="176" height="64" rx="8" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" stroke-width="1.5"/>
+  <text x="140" y="220" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="13" font-weight="700" fill="#10b981">PASS</text>
+  <text x="140" y="238" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9.5" fill="#8b949e">total ≥ 28</text>
+  <text x="140" y="252" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9.5" fill="#8b949e">brand_consistency &gt; 0</text>
+
+  <!-- FAIL -->
+  <rect x="332" y="196" width="176" height="64" rx="8" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.3)" stroke-width="1.5"/>
+  <text x="420" y="220" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="13" font-weight="700" fill="#ef4444">FAIL</text>
+  <text x="420" y="238" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9.5" fill="#8b949e">total &lt; 28</text>
+  <text x="420" y="252" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-size="9.5" fill="#8b949e">OR brand_consistency = 0</text>
+
+  <!-- Output -->
+  <line x1="280" y1="260" x2="280" y2="278" stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="80" y="282" width="400" height="22" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="280" y="297" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="10" fill="#a78bfa">checker_frame_json  →  MonetizationReflectorAgent</text>
+
+  <text x="280" y="312" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="8.5" fill="#30363d">PortfolioCheckerAgent · Pattern 3 — Goal-Oriented</text>
+</svg>

@@ -25,19 +25,9 @@ uid: artops.agents.generation
 
 ## Phase Frame
 
-```
-prompt_plan_json (from PromptCraftAgent)
-        │
-        ▼
-  Execute each variant sequentially
-  Attach reference photo at every generation call (CRITICAL)
-        │
-        ▼
-  Record raw result per variant (asset_path, status, notes)
-        │
-        ▼
-  make_response_json  ──▶  PortfolioCheckerAgent
-```
+<div class="diagram-wrap">
+  <img src="../../images/agent-01-flow.svg" alt="GenerationAgent phase flow: execute variants, record raw results, output" class="diagram-img">
+</div>
 
 ---
 

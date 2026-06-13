@@ -11,25 +11,9 @@ ArtOps consists of four phase-isolated agents. Each agent owns exactly one phase
 
 ## The Frame Chain
 
-```
-seed_intent  +  earned_constraints.json
-        │
-        ▼
-[00] PromptCraftAgent   →  prompt_plan_json
-        │
-        ▼
-[01] GenerationAgent    →  make_response_json
-        │
-        ▼
-[02] PortfolioChecker   →  checker_frame_json
-        │
-        ▼
-[03] MonetizationReflector  →  reflector_output
-        │
-        ├── ACCEPT       → publish + log
-        ├── LOOP (≤ 3)   → update earned_constraints.json → [00]
-        └── ESCALATE     → human review
-```
+<div class="diagram-wrap">
+  <img src="../../images/agents-frame-chain.svg" alt="ArtOps frame chain: four agents with ACCEPT/LOOP/ESCALATE verdict branches" class="diagram-img">
+</div>
 
 ---
 

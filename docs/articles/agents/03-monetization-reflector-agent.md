@@ -26,23 +26,9 @@ uid: artops.agents.monetization-reflector
 
 ## Phase Frame
 
-```
-checker_frame_json + loop history
-        │
-        ▼
-  Pattern Analysis — what failed, why, how many times
-        │
-        ▼
-  EarnedConstraints — crystallize lessons into never_again rules
-        │
-        ▼
-  Verdict: ACCEPT → Dribbble publish payload (TYPE1_PENDING)
-           LOOP   → earned_constraints for next PromptCraft call
-           ESCALATE → human review flag
-        │
-        ▼
-  reflector_output + updated earned_constraints.json
-```
+<div class="diagram-wrap">
+  <img src="../../images/agent-03-flow.svg" alt="MonetizationReflectorAgent phase flow: pattern analysis, crystallize constraints, ACCEPT/LOOP/ESCALATE" class="diagram-img">
+</div>
 
 ---
 

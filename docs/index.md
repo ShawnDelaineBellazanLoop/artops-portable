@@ -6,7 +6,7 @@ uid: artops.home
 ---
 
 <div class="hero-banner">
-  <div class="hero-badge">v1.0.6 &nbsp;·&nbsp; PMCRO 2.0.0 &nbsp;·&nbsp; DocFX 2.78.5</div>
+  <div class="hero-badge">v1.0.7 &nbsp;·&nbsp; PMCRO 2.0.0 &nbsp;·&nbsp; DocFX 2.78.5</div>
   <h1 class="hero-title">ArtOps</h1>
   <p class="hero-sub">A four-agent cognitive loop for AI self-portrait art.<br>Plan prompts. Generate images. Check portfolio quality. Reflect and monetize.<br>Runs on any AI platform.</p>
   <div class="hero-ctas">

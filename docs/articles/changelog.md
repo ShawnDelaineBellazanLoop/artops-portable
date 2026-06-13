@@ -11,6 +11,23 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.0.7] — 2026-06-12 (patch)
+
+**Agent reference pages get SVG phase frame diagrams.**
+
+### Added
+- `docs/images/agents-frame-chain.svg` — compact 4-agent frame chain with verdict branches for the Agent Reference index page.
+- `docs/images/agent-00-flow.svg` — PromptCraftAgent 3-step flow (constraint pre-check → deliberate → output).
+- `docs/images/agent-01-flow.svg` — GenerationAgent 3-step flow (execute → record → output).
+- `docs/images/agent-02-flow.svg` — PortfolioCheckerAgent flow with PASS/FAIL branch.
+- `docs/images/agent-03-flow.svg` — MonetizationReflectorAgent flow with ACCEPT/LOOP/ESCALATE 3-way branch.
+
+### Changed
+- All five agent article `## Phase Frame` sections: ASCII ` ``` ` code blocks replaced with `<div class="diagram-wrap"><img class="diagram-img" ...>` HTML — consistent with the pattern established in `index.md`. Article pages use `article img` CSS; the `.diagram-wrap/.diagram-img` classes cover the DocFX article layout context.
+- Version bumped to `v1.0.7`.
+
+---
+
 ## [1.0.6] — 2026-06-12 (patch)
 
 **Diagrams now render in DocFX.**

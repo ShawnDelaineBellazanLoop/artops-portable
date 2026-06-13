@@ -25,19 +25,9 @@ uid: artops.agents.portfolio-checker
 
 ## Phase Frame
 
-```
-make_response_json + brand-profile.json + ExecutionPlan
-        │
-        ▼
-  Score four dimensions per variant
-        │
-        ▼
-  PASS if overall >= 28/40 AND brand_consistency scored
-  FAIL otherwise
-        │
-        ▼
-  checker_frame_json  ──▶  MonetizationReflectorAgent
-```
+<div class="diagram-wrap">
+  <img src="../../images/agent-02-flow.svg" alt="PortfolioCheckerAgent phase flow: score dimensions, apply threshold, PASS/FAIL" class="diagram-img">
+</div>
 
 ---
 
