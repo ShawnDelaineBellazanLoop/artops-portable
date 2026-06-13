@@ -1,0 +1,14 @@
+- name: Agent Reference
+  href: index.md
+
+- name: "00 — PromptCraftAgent"
+  href: 00-prompt-craft-agent.md
+
+- name: "01 — GenerationAgent"
+  href: 01-generation-agent.md
+
+- name: "02 — PortfolioCheckerAgent"
+  href: 02-portfolio-checker-agent.md
+
+- name: "03 — MonetizationReflectorAgent"
+  href: 03-monetization-reflector-agent.md

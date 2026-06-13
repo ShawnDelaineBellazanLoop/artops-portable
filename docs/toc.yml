@@ -1,0 +1,10 @@
+- name: Home
+  href: index.md
+
+- name: Agent Reference
+  href: articles/agents/
+  homepage: articles/agents/index.md
+
+- name: Guides
+  href: articles/guides/
+  homepage: articles/guides/getting-started.md
