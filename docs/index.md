@@ -6,7 +6,7 @@ uid: artops.home
 ---
 
 <div class="hero-banner">
-  <div class="hero-badge">v1.0.1 &nbsp;·&nbsp; PMCRO 2.0.0 &nbsp;·&nbsp; DocFX 2.78.5</div>
+  <div class="hero-badge">v1.0.4 &nbsp;·&nbsp; PMCRO 2.0.0 &nbsp;·&nbsp; DocFX 2.78.5</div>
   <h1 class="hero-title">ArtOps</h1>
   <p class="hero-sub">A four-agent cognitive loop for AI self-portrait art.<br>Plan prompts. Generate images. Check portfolio quality. Reflect and monetize.<br>Runs on any AI platform.</p>
   <div class="hero-ctas">
@@ -155,7 +155,7 @@ cd artops-portable
 # Edit skills/brand-profile.json — add style keywords, color palette, avoid list
 
 # 3. Open skills/00-prompt-craft-agent/SKILL.md in your AI platform
-# Paste as system prompt, add earned_constraints.json + your concept
+# Paste as system prompt, add skills/earned-constraints.json + your concept
 
 # 4. Carry prompt_plan_json to GenerationAgent
 # ATTACH a reference photo of your subject — required by EARNED-2026-06-12-001
@@ -198,4 +198,4 @@ cd artops-portable
 
 ---
 
-*ArtOps Portable v1.0.1 · Built on PMCRO 2.0.0 · Tooensure LLC · 2026*
+*ArtOps Portable v1.0.4 · Built on PMCRO 2.0.0 · Tooensure LLC · 2026*

@@ -25,8 +25,8 @@ listed input → copy the JSON it returns → that's the input for the next step
 
 ## Before You Start
 
-- [ ] Unzipped `artops-portable/`
-- [ ] Filled in `brand-profile.json` (a few words on your style)
+- [ ] Cloned or unzipped the repo
+- [ ] Filled in `skills/brand-profile.json` (a few words on your style)
 - [ ] Have one good reference photo ready (natural light, neutral background)
 
 ---

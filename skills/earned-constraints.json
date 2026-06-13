@@ -1,6 +1,6 @@
 {
-  "_note": "ArtOps — Crystallized EarnedConstraints (skills/ copy). Canonical source is root earned_constraints.json. Keep in sync.",
-  "_version": "1.0.1",
+  "_note": "ArtOps — Crystallized EarnedConstraints. This is the single canonical source. Root earned_constraints.json is deprecated.",
+  "_version": "1.1.0",
   "_last_updated": "2026-06-12",
   "entries": [
     {

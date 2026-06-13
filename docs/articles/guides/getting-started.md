@@ -9,7 +9,7 @@ This guide walks you through your first complete ArtOps loop — from concept to
 - [ ] A concept in mind (subject, style, mood — 1–3 sentences)
 - [ ] A reference photo of your subject (strongly recommended — see [why](#why-reference-photos-matter))
 - [ ] Access to at least one AI platform (Google AI Studio, Claude, Gemini, Copilot)
-- [ ] `earned_constraints.json` (root) — start with `{"entries": []}` on first run
+- [ ] `skills/earned-constraints.json` — start with `{"entries": []}` on first run (already initialized in the repo)
 - [ ] `skills/brand-profile.json` — populated with your style keywords
 
 ---

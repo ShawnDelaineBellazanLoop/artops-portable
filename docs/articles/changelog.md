@@ -11,6 +11,20 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.0.4] — 2026-06-12 (patch)
+
+**Logo bug fix, CSS selector correction, docs.yml comment clarification.**
+
+### Fixed
+- `docs/images/artops-logo.svg` — removed opaque `<rect fill="#0a0b0f"/>` background that was rendering as a solid black square in the navbar. Transparent background now. Trimmed viewBox to 256×256 (pure ring icon — wordmark/tagline are unreadable at 28px navbar height anyway).
+- `docs/artops-template/public/main.css` — logo CSS was targeting `.app-logo` only. DocFX modern template renders the logo as `<img class="logo">` inside `.navbar-brand`. Now targets `.navbar-brand img`, `.navbar .logo`, and `.app-logo` for compatibility across DocFX versions.
+- `.github/workflows/docs.yml` — header comment said "do NOT use 10.x here" without explanation, which looked like a version bug. Clarified: the `dotnet-version: 8.x` is the DocFX CLI tool runtime (separate from the project application's .NET 10 LTS runtime). Both are correct; they serve different purposes.
+
+### Changed
+- Version bumped to `v1.0.4` in `index.md` hero badge, footer, and `main.js` footer badge.
+
+---
+
 ## [1.0.3] — 2026-06-12 (patch)
 
 **Artifact source integration, SKILL.md hardening, Skill Files nav page.**

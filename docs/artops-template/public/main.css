@@ -78,12 +78,17 @@ html, body {
   box-shadow: 0 1px 0 rgba(124,58,237,0.12) !important;
 }
 
+/* DocFX modern renders the logo as <img class="logo"> inside .navbar-brand.
+   Target all three selectors to be safe across DocFX versions. */
+.navbar-brand img,
+.navbar .logo,
 .app-logo {
-  height: 28px;
+  height: 26px;
   width: auto;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 8px;
   vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .navbar-brand {

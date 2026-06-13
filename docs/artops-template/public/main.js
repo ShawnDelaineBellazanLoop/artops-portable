@@ -42,7 +42,7 @@ export default {
     if (footer) {
       const badge = document.createElement('div');
       badge.style.cssText = 'text-align:center;margin-top:0.5rem;font-family:monospace;font-size:0.7rem;opacity:0.4;letter-spacing:0.05em;';
-      badge.textContent = 'ArtOps v1.0.0 · PMCRO 2.0.0 · DocFX 2.78.5 · .NET 10 LTS';
+      badge.textContent = 'ArtOps v1.0.4 · PMCRO 2.0.0 · DocFX 2.78.5 · .NET 10 LTS';
       footer.appendChild(badge);
     }
   }

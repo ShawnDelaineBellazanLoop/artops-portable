@@ -1,26 +1,5 @@
 {
-  "_note": "ArtOps Portable — Crystallized EarnedConstraints. Injected into every PromptCraftAgent call.",
-  "_version": "1.0.1",
-  "_last_updated": "2026-06-12",
-  "entries": [
-    {
-      "constraint_id": "EARNED-2026-06-12-001",
-      "never_again":    "generating a variant without attaching the reference photo of the subject",
-      "reason":         "brand_consistency scored 0 (unscored) when no reference photo was used at the MAKE step. A zero on brand_consistency alone causes total to drop below the 28/40 portfolio threshold. Observed in Chase session (Loop 1): total was 24/40, verdict LOOP.",
-      "evidence": {
-        "session":      "artops-chase-session-01",
-        "loop":         1,
-        "variant_id":   "v1",
-        "total_score":  24,
-        "threshold":    28,
-        "brand_score":  0,
-        "root_cause":   "text-only generation, no reference photo attached, empty brand-profile.json"
-      },
-      "created_at":     "2026-06-12T00:00:00Z",
-      "cycle":          1,
-      "loop":           1,
-      "status":         "active",
-      "tier_impact":    "This constraint moves the pack from Tier 1 (bootstrapped) toward Tier 2 (proven). First crystallized rule."
-    }
-  ]
+  "_MOVED": "This file has been consolidated. The canonical earned constraints file is: skills/earned-constraints.json",
+  "_action": "Delete this file and use skills/earned-constraints.json instead.",
+  "_version": "DEPRECATED"
 }

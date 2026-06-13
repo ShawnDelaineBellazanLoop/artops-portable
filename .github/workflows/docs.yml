@@ -1,10 +1,11 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # ArtOps Portable — DocFX GitHub Pages Deployment
-# Production-ready · Bleeding-edge · Enterprise-grade · State-of-the-art
 #
 # Stack (validated 2026-06-12):
 #   DocFX:   2.78.5 (latest stable) — dotnet tool update -g docfx (always latest)
-#   .NET:    8.x (DocFX 2.78.5 targets .NET 8 — do NOT use 10.x here)
+#   .NET:    8.x LTS — this is the DocFX TOOL runtime, not the app runtime.
+#            The project application uses .NET 10 LTS; DocFX the CLI tool runs
+#            on .NET 8 LTS (supported through Nov 2026). Do NOT conflate the two.
 #   Actions: actions/checkout@v4 · actions/setup-dotnet@v4
 #            actions/upload-pages-artifact@v3 · actions/deploy-pages@v4
 #
@@ -50,7 +51,7 @@ jobs:
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.x   # DocFX 2.78.5 targets .NET 8
+          dotnet-version: 8.x   # DocFX tool runtime (LTS). Separate from project's .NET 10 runtime.
 
       - name: Install / update DocFX (always pulls latest 2.78.x stable)
         run: dotnet tool update -g docfx

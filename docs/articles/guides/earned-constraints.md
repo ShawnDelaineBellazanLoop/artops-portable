@@ -16,9 +16,11 @@ Any variant that violates a `never_again` phrase is removed before the plan is e
 
 ---
 
-## The `earned_constraints.json` File
+## The `skills/earned-constraints.json` File
 
-This file lives at the root of the pack. It grows with every LOOP cycle.
+This is the **single canonical file** for earned constraints. It lives in `skills/` alongside the SKILL.md files, where operators work and where the Reflector writes new constraints.
+
+> The root `earned_constraints.json` is deprecated — delete it if present.
 
 **Empty (first run):**
 

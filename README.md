@@ -57,7 +57,7 @@ Seed Concept
 > Without it, `brand_consistency` scores 0, dropping total below the 28/40 threshold.  
 > This is an EarnedConstraint from a real loop run — not a guideline.
 
-See [`earned_constraints.json`](earned_constraints.json) for the full constraint record.
+See [`skills/earned-constraints.json`](skills/earned-constraints.json) for the full constraint record.
 
 ---
 
@@ -65,14 +65,18 @@ See [`earned_constraints.json`](earned_constraints.json) for the full constraint
 
 ```
 artops-portable/
-├── 00-prompt-craft-agent/SKILL.md
-├── 01-generation-agent/SKILL.md
-├── 02-portfolio-checker-agent/SKILL.md
-├── 03-monetization-reflector-agent/SKILL.md
-├── earned_constraints.json
-├── brand-profile.json
-├── docs/                               ← DocFX documentation site source
-└── .github/workflows/docs.yml          ← GitHub Pages CI pipeline
+├── skills/
+│   ├── 00-prompt-craft-agent/SKILL.md
+│   ├── 01-generation-agent/SKILL.md
+│   ├── 02-portfolio-checker-agent/SKILL.md
+│   ├── 03-monetization-reflector-agent/SKILL.md
+│   ├── earned-constraints.json       ← canonical constraint file
+│   ├── brand-profile.json
+│   ├── conversion-tracker.json
+│   ├── CHEATSHEET.md
+│   └── GUIDE.md
+├── docs/                             ← DocFX documentation site source
+└── .github/workflows/docs.yml        ← GitHub Pages CI pipeline
 ```
 
 ---
