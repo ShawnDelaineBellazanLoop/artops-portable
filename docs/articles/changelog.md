@@ -11,6 +11,26 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.0.8] — 2026-06-12 (patch)
+
+**TIER 2 → TIER 3 sync: earned constraints crystallized, logo SVG violation fixed.**
+
+### Fixed
+- `docs/images/artops-logo.svg` — removed `width="256" height="256"` from the SVG root (viewBox-only now), closing the last open item of EARNED-2026-06-12-002. All 8 SVGs under `docs/images/` are now viewBox-only.
+
+### Added
+- `skills/earned-constraints.json` — added `EARNED-2026-06-12-002`, `EARNED-2026-06-12-003`, `EARNED-2026-06-12-004` (previously only `-001` was present). Each includes evidence and verification notes from the 2026-06-12 sync.
+- `skills/README.md` — new **DocFX Image Rendering Constraints** section documenting `-002`/`-003` for anyone extending the docs site.
+
+### Verified (no changes needed)
+- `docs/artops-template/public/main.css` already satisfied EARNED-2026-06-12-003 (both `article img`/`figure img` and `.diagram-wrap`/`.diagram-img` defined as of v1.0.6).
+- `skills/00-prompt-craft-agent/SKILL.md` already had EARNED-2026-06-12-001 baked into Process step 1 (as of v1.0.3).
+
+### Source
+This closes the TIER 2 → TIER 3 sync checklist from `ProjectName/.pmcro/generated/artops/skill-delta.md` (artops-docs-session-01). Remaining: `git tag v1.0.8` to fire the release workflow.
+
+---
+
 ## [1.0.7] — 2026-06-12 (patch)
 
 **Agent reference pages get SVG phase frame diagrams.**

@@ -1,6 +1,6 @@
 {
   "_note": "ArtOps — Crystallized EarnedConstraints. This is the single canonical source. Root earned_constraints.json is deprecated.",
-  "_version": "1.1.0",
+  "_version": "1.2.0",
   "_last_updated": "2026-06-12",
   "entries": [
     {
@@ -21,6 +21,55 @@
       "loop":           1,
       "status":         "active",
       "tier_impact":    "This constraint moves the pack from Tier 1 (bootstrapped) toward Tier 2 (proven). First crystallized rule."
+    },
+    {
+      "constraint_id": "EARNED-2026-06-12-002",
+      "never_again":    "creating an SVG with fixed width and height attributes on the root element for use inside DocFX",
+      "reason":         "DocFX content columns have overflow:hidden. Fixed-width SVGs wider than the column are clipped to invisible. viewBox-only SVGs scale fluidly to any container width.",
+      "evidence": {
+        "session":      "artops-docs-session-01",
+        "loop":         2,
+        "agent_scope":  "Maker — any agent writing SVG files for DocFX sites",
+        "root_cause":   "docs/images/artops-logo.svg shipped with width=\"256\" height=\"256\" in addition to viewBox, causing clipping in narrow DocFX columns. Corrected during TIER 2->3 sync 2026-06-12."
+      },
+      "created_at":     "2026-06-12T22:03:00Z",
+      "cycle":          2,
+      "loop":           2,
+      "status":         "active",
+      "enforcement":    "All SVG files intended for DocFX must use viewBox only. Remove width and height attributes from the <svg> root before writing. Apply max-width:100%; height:auto in CSS.",
+      "tier_impact":    "Applies to all 8 SVGs under docs/images/. Verified compliant 2026-06-12 after fixing artops-logo.svg."
+    },
+    {
+      "constraint_id": "EARNED-2026-06-12-003",
+      "never_again":    "relying only on the article img CSS selector for images in DocFX landing layout pages",
+      "reason":         "layout: landing pages in DocFX do not wrap content in <article>. The article selector never fires for landing pages. Both .diagram-wrap/.diagram-img AND article img must be defined to cover all DocFX layout types.",
+      "evidence": {
+        "session":      "artops-docs-session-01",
+        "loop":         2,
+        "agent_scope":  "Maker — any agent writing CSS for DocFX sites",
+        "verification": "docs/artops-template/public/main.css contains both 'article img, article figure img, .content img' and '.diagram-wrap'/'.diagram-img' blocks. Verified compliant 2026-06-12."
+      },
+      "created_at":     "2026-06-12T22:03:00Z",
+      "cycle":          2,
+      "loop":           2,
+      "status":         "active",
+      "enforcement":    "DocFX CSS must always include: (1) article img — for standard pages, (2) .diagram-wrap / .diagram-img — for landing layout pages. Use <div class='diagram-wrap'><img class='diagram-img' src='...' alt='...'></div> for all diagram embeds."
+    },
+    {
+      "constraint_id": "EARNED-2026-06-12-004",
+      "never_again":    "beginning a file-writing session for a project without first opening a system trail frame",
+      "reason":         "The artops-docs-session-01 workstream produced 18 file edits across 3 loops with no trail frames until retroactive backfill. EC-010 mandates trail.append after every phase. The system frame (00-system.jsonl) is the cycle's contract — it must be written before the first tool call.",
+      "evidence": {
+        "session":      "artops-docs-session-01",
+        "loop":         3,
+        "agent_scope":  "Orchestrator"
+      },
+      "created_at":     "2026-06-12T22:03:00Z",
+      "cycle":          3,
+      "loop":           3,
+      "status":         "active",
+      "enforcement":    "On every session start where file writes or tool calls will occur: (1) Assign cycle_id, (2) Write 00-system.jsonl with seed_intent and scope, (3) THEN begin executing. Backfill is permitted but is a constraint violation signal.",
+      "tier_impact":    "Ratified as ARCH-NEW-002 in pmcro-framework. Repeated as FRAC-TRAIL-BACKFILL-001 during the 2026-06-12 TIER 2->3 sync session."
     }
   ]
 }
