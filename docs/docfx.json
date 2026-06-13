@@ -1,16 +1,5 @@
 {
-  // ─────────────────────────────────────────────────────────────────────────
-  // ArtOps Portable — DocFX 2.78.5 (latest stable, validated 2026-06-12)
-  // Production-ready · Bleeding-edge · Enterprise-grade · State-of-the-art
-  // Tool:  dotnet tool install -g docfx --version 2.78.5
-  // Build: docfx docs/docfx.json
-  // Serve: docfx docs/docfx.json --serve
-  // Deploy: GitHub Pages via .github/workflows/docs.yml
-  // ─────────────────────────────────────────────────────────────────────────
-
   "build": {
-
-    // ── Content: all markdown + toc yml ──────────────────────────────────
     "content": [
       {
         "files": [ "**/*.{md,yml}" ],
@@ -23,50 +12,31 @@
       }
     ],
 
-    // ── Static resources ──────────────────────────────────────────────────
-    "resource": [
-      { "files": [ "images/**", "favicon.ico" ] }
-    ],
-
-    // ── Output ────────────────────────────────────────────────────────────
     "output": "_site",
 
-    // ── Template stack (order matters — later overrides earlier) ──────────
-    // "default" : base renderers (required)
-    // "modern"  : Bootstrap 5.3, dark/light/auto, lunr search, Mermaid.js
-    //             (recommended production template as of DocFX 2.78.5)
     "template": [
       "default",
       "modern"
     ],
 
-    // ── Post-processors ───────────────────────────────────────────────────
     "postProcessors": [ "ExtractSearchIndex" ],
 
-    // ── Global metadata ───────────────────────────────────────────────────
     "globalMetadata": {
-
-      // Site identity
       "_appTitle": "ArtOps — AI Self-Portrait Agent Pack",
       "_appName":  "ArtOps Portable",
       "_appFooter": "© 2026 Tooensure LLC — Proprietary Cognitive Asset",
-
-      // Modern template features
-      "_enableSearch":         true,
-      "_enableNewTab":         true,
-      "_disableContribution":  false,
-      "_disableBreadcrumb":    false,
-      "_disableTocFilter":     false,
-      "_noindex":              false,
-
-      // Git integration — "Edit this page" button
+      "_enableSearch":        true,
+      "_enableNewTab":        true,
+      "_disableContribution": false,
+      "_disableBreadcrumb":   false,
+      "_disableTocFilter":    false,
+      "_noindex":             false,
       "_gitContribute": {
-        "repo":   "https://github.com/tooensure/artops-portable",
+        "repo":   "https://github.com/ShawnDelaineBellazanLoop/artops-portable",
         "branch": "main"
       }
     },
 
-    // ── Per-file metadata ─────────────────────────────────────────────────
     "fileMetadata": {
       "_category": {
         "articles/agents/**": "agent-reference",
@@ -78,18 +48,15 @@
       }
     },
 
-    // ── Sitemap ───────────────────────────────────────────────────────────
     "sitemap": {
-      "baseUrl":    "https://tooensure.github.io/artops-portable",
+      "baseUrl":    "https://ShawnDelaineBellazanLoop.github.io/artops-portable",
       "priority":   0.5,
       "changefreq": "weekly"
     },
 
-    // ── Build quality ─────────────────────────────────────────────────────
     "warningsAsErrors": false,
     "logLevel": "Warning",
 
-    // ── Markdown extensions (Markdig pipeline) ────────────────────────────
     "markdownEngineProperties": {
       "markdigExtensions": [
         "abbreviations",
@@ -97,7 +64,6 @@
         "figures",
         "bootstrap",
         "emphasisextras",
-        "tables",
         "pipetables",
         "tasklists",
         "diagrams"

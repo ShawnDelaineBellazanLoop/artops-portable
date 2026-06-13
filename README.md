@@ -4,13 +4,13 @@
 Plan prompts → Generate images → Check portfolio quality → Reflect and monetize.  
 Runs on any AI platform. No framework install required.
 
-[![Deploy DocFX to GitHub Pages](https://github.com/tooensure/artops-portable/actions/workflows/docs.yml/badge.svg)](https://github.com/tooensure/artops-portable/actions/workflows/docs.yml)
+[![Deploy DocFX to GitHub Pages](https://github.com/ShawnDelaineBellazanLoop/artops-portable/actions/workflows/docs.yml/badge.svg)](https://github.com/ShawnDelaineBellazanLoop/artops-portable/actions/workflows/docs.yml)
 
 ---
 
 ## 📖 Documentation
 
-**[→ View the full docs site](https://tooensure.github.io/artops-portable)**
+**[→ View the full docs site](https://ShawnDelaineBellazanLoop.github.io/artops-portable)**
 
 Built with DocFX 2.78.5 · Deployed via GitHub Actions · Hosted on GitHub Pages
 
@@ -65,12 +65,12 @@ See [`earned_constraints.json`](earned_constraints.json) for the full constraint
 
 ```
 artops-portable/
-├── 00-prompt-craft-agent/SKILL.md      ← PLAN phase
-├── 01-generation-agent/SKILL.md        ← MAKE phase
-├── 02-portfolio-checker-agent/SKILL.md ← CHECK phase
-├── 03-monetization-reflector-agent/SKILL.md ← REFLECT phase
-├── earned_constraints.json             ← Crystallized loop knowledge
-├── brand-profile.json                  ← Fill in your subject's brand
+├── 00-prompt-craft-agent/SKILL.md
+├── 01-generation-agent/SKILL.md
+├── 02-portfolio-checker-agent/SKILL.md
+├── 03-monetization-reflector-agent/SKILL.md
+├── earned_constraints.json
+├── brand-profile.json
 ├── docs/                               ← DocFX documentation site source
 └── .github/workflows/docs.yml          ← GitHub Pages CI pipeline
 ```
