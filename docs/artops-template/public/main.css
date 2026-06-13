@@ -1,0 +1,604 @@
+/* =============================================================================
+   ArtOps — Product Site Design Layer
+   DocFX Modern Template Override · Bootstrap 5.3 CSS Variables
+   Production-ready · Validated against DocFX 2.78.5 · 2026-06-12
+   =============================================================================
+   Architecture:
+     [default] → [modern] → [artops-template]   ← this file is the top layer
+   All overrides use Bootstrap 5.3 CSS variables + DocFX modern selectors.
+   No JavaScript framework required. Dark-first, light-mode-respecting.
+   ============================================================================= */
+
+/* ---------------------------------------------------------------------------
+   BRAND TOKENS — single source of truth for the entire design
+   --------------------------------------------------------------------------- */
+:root {
+  /* Palette */
+  --ao-black:        #0a0b0f;
+  --ao-navy:         #0d1117;
+  --ao-navy-mid:     #161b22;
+  --ao-navy-border:  #21262d;
+  --ao-accent:       #7c3aed;        /* violet — primary CTA */
+  --ao-accent-glow:  #a855f7;        /* lighter violet for gradients */
+  --ao-accent-alt:   #06b6d4;        /* cyan — secondary accent */
+  --ao-gold:         #f59e0b;        /* amber — badges / earned constraints */
+  --ao-green:        #10b981;        /* emerald — ACCEPT state */
+  --ao-red:          #ef4444;        /* red — ESCALATE state */
+  --ao-text-primary: #f0f6fc;
+  --ao-text-muted:   #8b949e;
+  --ao-text-subtle:  #484f58;
+
+  /* Typography */
+  --ao-font-sans:    'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --ao-font-mono:    'JetBrains Mono', 'Cascadia Code', 'Fira Code', ui-monospace, monospace;
+
+  /* Spacing */
+  --ao-radius:       8px;
+  --ao-radius-lg:    16px;
+  --ao-radius-xl:    24px;
+
+  /* Shadows */
+  --ao-shadow-sm:    0 1px 3px rgba(0,0,0,0.4);
+  --ao-shadow-md:    0 4px 16px rgba(0,0,0,0.5);
+  --ao-shadow-glow:  0 0 32px rgba(124,58,237,0.25);
+
+  /* Bootstrap overrides — applied globally so DocFX modern picks them up */
+  --bs-primary:              var(--ao-accent);
+  --bs-primary-rgb:          124, 58, 237;
+  --bs-link-color-rgb:       168, 85, 247 !important;
+  --bs-link-hover-color-rgb: 196, 132, 252 !important;
+  --bs-body-bg:              var(--ao-navy);
+  --bs-body-color:           var(--ao-text-primary);
+  --bs-border-color:         var(--ao-navy-border);
+  --bs-font-sans-serif:      var(--ao-font-sans);
+  --bs-font-monospace:       var(--ao-font-mono);
+  --bs-border-radius:        var(--ao-radius);
+}
+
+/* ---------------------------------------------------------------------------
+   GLOBAL RESETS & BASE
+   --------------------------------------------------------------------------- */
+html, body {
+  background-color: var(--ao-navy) !important;
+  color: var(--ao-text-primary) !important;
+  font-family: var(--ao-font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* ---------------------------------------------------------------------------
+   NAVBAR — dark glass with accent underline
+   --------------------------------------------------------------------------- */
+.navbar {
+  background: rgba(13, 17, 23, 0.92) !important;
+  border-bottom: 1px solid var(--ao-navy-border) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 1px 0 rgba(124,58,237,0.15) !important;
+}
+
+.navbar-brand {
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--ao-accent-glow), var(--ao-accent-alt));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar .nav-link {
+  color: var(--ao-text-muted) !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--ao-text-primary) !important;
+}
+
+/* ---------------------------------------------------------------------------
+   SIDEBAR TOC — clean, scannable
+   --------------------------------------------------------------------------- */
+.toc-filter-container {
+  border-bottom: 1px solid var(--ao-navy-border) !important;
+}
+
+.toc .nav-link {
+  color: var(--ao-text-muted) !important;
+  font-size: 0.8125rem !important;
+  padding: 0.3rem 0.75rem !important;
+  border-radius: var(--ao-radius) !important;
+  transition: all 0.12s ease !important;
+}
+
+.toc .nav-link:hover {
+  color: var(--ao-text-primary) !important;
+  background: rgba(124,58,237,0.12) !important;
+}
+
+.toc .nav-link.active,
+.toc .nav-link[aria-current="page"] {
+  color: var(--ao-accent-glow) !important;
+  background: rgba(124,58,237,0.18) !important;
+  border-left: 2px solid var(--ao-accent) !important;
+  font-weight: 600 !important;
+}
+
+/* ---------------------------------------------------------------------------
+   HERO SECTION — lands on index.md, full-width product banner
+   --------------------------------------------------------------------------- */
+
+/* The article wrapper for the landing page */
+article.content .hero-banner {
+  background: linear-gradient(135deg, #0d1117 0%, #1a0a2e 40%, #0d1b2a 100%);
+  border: 1px solid var(--ao-navy-border);
+  border-radius: var(--ao-radius-xl);
+  padding: 3.5rem 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--ao-shadow-glow);
+}
+
+article.content .hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+article.content .hero-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------------
+   ARTICLE TYPOGRAPHY — editorial product-doc quality
+   --------------------------------------------------------------------------- */
+article h1 {
+  font-size: clamp(1.875rem, 4vw, 2.5rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.15 !important;
+  color: var(--ao-text-primary) !important;
+  margin-bottom: 1rem !important;
+}
+
+article h2 {
+  font-size: 1.375rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--ao-text-primary) !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.75rem !important;
+  padding-bottom: 0.5rem !important;
+  border-bottom: 1px solid var(--ao-navy-border) !important;
+}
+
+article h3 {
+  font-size: 1.0625rem !important;
+  font-weight: 600 !important;
+  color: var(--ao-text-primary) !important;
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+article p {
+  color: var(--ao-text-primary);
+  line-height: 1.75 !important;
+  font-size: 0.9375rem !important;
+}
+
+article strong {
+  color: var(--ao-text-primary) !important;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+   LINKS
+   --------------------------------------------------------------------------- */
+article a,
+.content a {
+  color: #a78bfa !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease;
+}
+
+article a:hover,
+.content a:hover {
+  color: #c4b5fd !important;
+  text-decoration: underline !important;
+}
+
+/* ---------------------------------------------------------------------------
+   CODE BLOCKS — dark, sharp, monospaced
+   --------------------------------------------------------------------------- */
+pre,
+code {
+  font-family: var(--ao-font-mono) !important;
+  font-size: 0.8125rem !important;
+}
+
+pre {
+  background: #010409 !important;
+  border: 1px solid var(--ao-navy-border) !important;
+  border-radius: var(--ao-radius) !important;
+  padding: 1.25rem 1.5rem !important;
+  overflow-x: auto !important;
+  box-shadow: var(--ao-shadow-sm) !important;
+  position: relative;
+}
+
+pre code {
+  color: #e6edf3 !important;
+  background: transparent !important;
+}
+
+/* Inline code */
+:not(pre) > code {
+  background: rgba(124,58,237,0.15) !important;
+  color: #c4b5fd !important;
+  padding: 0.15em 0.45em !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(124,58,237,0.25) !important;
+  font-size: 0.8125rem !important;
+}
+
+/* ---------------------------------------------------------------------------
+   TABLES — clean data tables with hover
+   --------------------------------------------------------------------------- */
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-size: 0.875rem !important;
+  margin: 1.5rem 0 !important;
+}
+
+table thead th {
+  background: var(--ao-navy-mid) !important;
+  color: var(--ao-text-muted) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  padding: 0.75rem 1rem !important;
+  border-bottom: 1px solid var(--ao-navy-border) !important;
+  white-space: nowrap;
+}
+
+table tbody tr {
+  border-bottom: 1px solid rgba(33,38,45,0.8) !important;
+  transition: background 0.1s ease;
+}
+
+table tbody tr:hover {
+  background: rgba(124,58,237,0.06) !important;
+}
+
+table tbody td {
+  padding: 0.7rem 1rem !important;
+  color: var(--ao-text-primary) !important;
+  vertical-align: top;
+}
+
+table tbody tr:last-child {
+  border-bottom: none !important;
+}
+
+/* ---------------------------------------------------------------------------
+   CALLOUT / ALERT BOXES — verdicts and status boxes
+   --------------------------------------------------------------------------- */
+
+/* Tip / Note → violet */
+.alert-info,
+blockquote {
+  background: rgba(124,58,237,0.08) !important;
+  border-left: 3px solid var(--ao-accent) !important;
+  border-radius: var(--ao-radius) !important;
+  padding: 1rem 1.25rem !important;
+  margin: 1.25rem 0 !important;
+  color: var(--ao-text-primary) !important;
+}
+
+blockquote p {
+  margin: 0 !important;
+  font-style: normal !important;
+  font-size: 0.9375rem !important;
+}
+
+/* Warning → amber */
+.alert-warning {
+  background: rgba(245,158,11,0.08) !important;
+  border-left: 3px solid var(--ao-gold) !important;
+  border-radius: var(--ao-radius) !important;
+  color: var(--ao-text-primary) !important;
+}
+
+/* Danger / Caution → red */
+.alert-danger {
+  background: rgba(239,68,68,0.08) !important;
+  border-left: 3px solid var(--ao-red) !important;
+  border-radius: var(--ao-radius) !important;
+  color: var(--ao-text-primary) !important;
+}
+
+/* ---------------------------------------------------------------------------
+   BADGE CHIPS — phase / pattern labels
+   --------------------------------------------------------------------------- */
+.badge-plan    { background: rgba(6,182,212,0.15);  color: #22d3ee;  border: 1px solid rgba(6,182,212,0.3);  border-radius: 9999px; padding: 0.2em 0.65em; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; display: inline-block; }
+.badge-make    { background: rgba(168,85,247,0.15); color: #c084fc;  border: 1px solid rgba(168,85,247,0.3); border-radius: 9999px; padding: 0.2em 0.65em; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; display: inline-block; }
+.badge-check   { background: rgba(245,158,11,0.15); color: #fbbf24;  border: 1px solid rgba(245,158,11,0.3); border-radius: 9999px; padding: 0.2em 0.65em; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; display: inline-block; }
+.badge-reflect { background: rgba(16,185,129,0.15); color: #34d399;  border: 1px solid rgba(16,185,129,0.3); border-radius: 9999px; padding: 0.2em 0.65em; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; display: inline-block; }
+
+/* ---------------------------------------------------------------------------
+   AGENT CARDS — featured grid on index and agent reference
+   --------------------------------------------------------------------------- */
+.agent-card {
+  background: var(--ao-navy-mid);
+  border: 1px solid var(--ao-navy-border);
+  border-radius: var(--ao-radius-lg);
+  padding: 1.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  display: block;
+  text-decoration: none !important;
+  color: var(--ao-text-primary) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.agent-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ao-accent), var(--ao-accent-alt));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.agent-card:hover {
+  border-color: rgba(124,58,237,0.5) !important;
+  box-shadow: var(--ao-shadow-glow) !important;
+  transform: translateY(-2px);
+}
+
+.agent-card:hover::before {
+  opacity: 1;
+}
+
+.agent-card .card-number {
+  font-family: var(--ao-font-mono);
+  font-size: 0.7rem;
+  color: var(--ao-text-subtle);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.agent-card .card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ao-text-primary);
+  margin-bottom: 0.375rem;
+}
+
+.agent-card .card-desc {
+  font-size: 0.8125rem;
+  color: var(--ao-text-muted);
+  line-height: 1.55;
+}
+
+/* ---------------------------------------------------------------------------
+   VERDICT PILLS — ACCEPT / LOOP / ESCALATE
+   --------------------------------------------------------------------------- */
+.verdict-accept   { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(16,185,129,0.12); color: var(--ao-green); border: 1px solid rgba(16,185,129,0.3); border-radius: 9999px; padding: 0.3em 0.8em; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; }
+.verdict-loop     { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(245,158,11,0.12); color: var(--ao-gold);  border: 1px solid rgba(245,158,11,0.3);  border-radius: 9999px; padding: 0.3em 0.8em; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; }
+.verdict-escalate { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(239,68,68,0.12);  color: var(--ao-red);   border: 1px solid rgba(239,68,68,0.3);   border-radius: 9999px; padding: 0.3em 0.8em; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; }
+
+/* ---------------------------------------------------------------------------
+   LOOP FLOW DIAGRAM — ASCII art code blocks that represent the loop
+   --------------------------------------------------------------------------- */
+pre:has(code:contains("PromptCraftAgent")),
+pre:has(code:contains("PLAN")),
+pre:has(code:contains("→ ACCEPT")) {
+  background: linear-gradient(135deg, #010409 0%, #0d0618 100%) !important;
+  border-color: rgba(124,58,237,0.3) !important;
+  box-shadow: 0 0 20px rgba(124,58,237,0.1) !important;
+}
+
+/* ---------------------------------------------------------------------------
+   SEARCH BOX
+   --------------------------------------------------------------------------- */
+.search-box input,
+#search-query {
+  background: var(--ao-navy-mid) !important;
+  border: 1px solid var(--ao-navy-border) !important;
+  border-radius: var(--ao-radius) !important;
+  color: var(--ao-text-primary) !important;
+  font-size: 0.875rem !important;
+}
+
+.search-box input:focus,
+#search-query:focus {
+  border-color: var(--ao-accent) !important;
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.2) !important;
+  outline: none !important;
+}
+
+/* ---------------------------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------------------------- */
+footer {
+  background: var(--ao-navy) !important;
+  border-top: 1px solid var(--ao-navy-border) !important;
+  color: var(--ao-text-subtle) !important;
+  font-size: 0.8125rem !important;
+  padding: 1.5rem 0 !important;
+}
+
+footer a {
+  color: var(--ao-text-muted) !important;
+}
+
+footer a:hover {
+  color: var(--ao-accent-glow) !important;
+}
+
+/* ---------------------------------------------------------------------------
+   BREADCRUMBS
+   --------------------------------------------------------------------------- */
+.breadcrumb {
+  background: transparent !important;
+  font-size: 0.8125rem !important;
+  padding: 0 !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.breadcrumb-item {
+  color: var(--ao-text-muted) !important;
+}
+
+.breadcrumb-item.active {
+  color: var(--ao-text-primary) !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: var(--ao-text-subtle) !important;
+}
+
+/* ---------------------------------------------------------------------------
+   BUTTON — primary CTA style
+   --------------------------------------------------------------------------- */
+.btn-primary,
+a.btn-primary {
+  background: var(--ao-accent) !important;
+  border-color: var(--ao-accent) !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  border-radius: var(--ao-radius) !important;
+  padding: 0.5rem 1.25rem !important;
+  font-size: 0.875rem !important;
+  transition: all 0.15s ease !important;
+  box-shadow: 0 2px 8px rgba(124,58,237,0.4) !important;
+}
+
+.btn-primary:hover,
+a.btn-primary:hover {
+  background: #6d28d9 !important;
+  border-color: #6d28d9 !important;
+  box-shadow: 0 4px 16px rgba(124,58,237,0.5) !important;
+  transform: translateY(-1px);
+}
+
+/* ---------------------------------------------------------------------------
+   UTILITY — stat grid used in index.md
+   --------------------------------------------------------------------------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat-item {
+  background: var(--ao-navy-mid);
+  border: 1px solid var(--ao-navy-border);
+  border-radius: var(--ao-radius);
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-item .stat-number {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--ao-accent-glow);
+  font-family: var(--ao-font-mono);
+  line-height: 1;
+  display: block;
+}
+
+.stat-item .stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ao-text-muted);
+  margin-top: 0.35rem;
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------
+   SCROLLBAR — minimal dark
+   --------------------------------------------------------------------------- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--ao-navy); }
+::-webkit-scrollbar-thumb { background: var(--ao-navy-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ao-text-subtle); }
+
+/* ---------------------------------------------------------------------------
+   SELECTION
+   --------------------------------------------------------------------------- */
+::selection {
+  background: rgba(124,58,237,0.35);
+  color: var(--ao-text-primary);
+}
+
+/* ---------------------------------------------------------------------------
+   RESPONSIVE TWEAKS
+   --------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  article h1 { font-size: 1.625rem !important; }
+  article h2 { font-size: 1.1875rem !important; }
+  article.content .hero-banner { padding: 2rem 1.5rem; }
+}
+
+/* ---------------------------------------------------------------------------
+   LIGHT MODE — respects system preference via DocFX modern data-bs-theme
+   --------------------------------------------------------------------------- */
+[data-bs-theme="light"] {
+  --ao-navy:         #f6f8fa;
+  --ao-navy-mid:     #ffffff;
+  --ao-navy-border:  #d0d7de;
+  --ao-text-primary: #1f2328;
+  --ao-text-muted:   #656d76;
+  --ao-text-subtle:  #afb8c1;
+  --bs-body-bg:      #f6f8fa;
+  --bs-body-color:   #1f2328;
+  --bs-border-color: #d0d7de;
+}
+
+[data-bs-theme="light"] .navbar {
+  background: rgba(246,248,250,0.95) !important;
+  border-bottom: 1px solid #d0d7de !important;
+}
+
+[data-bs-theme="light"] .agent-card {
+  background: #ffffff;
+  border-color: #d0d7de;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+
+[data-bs-theme="light"] :not(pre) > code {
+  background: rgba(124,58,237,0.08) !important;
+  color: #7c3aed !important;
+  border-color: rgba(124,58,237,0.2) !important;
+}
+
+[data-bs-theme="light"] pre {
+  background: #161b22 !important;
+  border-color: #d0d7de !important;
+}

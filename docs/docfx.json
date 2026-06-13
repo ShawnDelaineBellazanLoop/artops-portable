@@ -6,6 +6,7 @@
         "exclude": [
           "_site/**",
           "templates/**",
+          "artops-template/**",
           "**/node_modules/**",
           "obj/**"
         ]
@@ -16,15 +17,16 @@
 
     "template": [
       "default",
-      "modern"
+      "modern",
+      "artops-template"
     ],
 
     "postProcessors": [ "ExtractSearchIndex" ],
 
     "globalMetadata": {
-      "_appTitle": "ArtOps — AI Self-Portrait Agent Pack",
-      "_appName":  "ArtOps Portable",
-      "_appFooter": "© 2026 Tooensure LLC — Proprietary Cognitive Asset",
+      "_appTitle":    "ArtOps — AI Self-Portrait Agent Pack",
+      "_appName":     "ArtOps",
+      "_appFooter":   "© 2026 Tooensure LLC — Proprietary Cognitive Asset · Built on PMCRO 2.0.0",
       "_enableSearch":        true,
       "_enableNewTab":        true,
       "_disableContribution": false,
@@ -41,7 +43,9 @@
       "_category": {
         "articles/agents/**": "agent-reference",
         "articles/guides/**": "guide",
-        "articles/**":        "conceptual"
+        "articles/changelog.md": "changelog",
+        "articles/roadmap.md":   "roadmap",
+        "articles/**":           "conceptual"
       },
       "_enableContribution": {
         "articles/**": true

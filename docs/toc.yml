@@ -8,3 +8,9 @@
 - name: Guides
   href: articles/guides/
   homepage: articles/guides/getting-started.md
+
+- name: Changelog
+  href: articles/changelog.md
+
+- name: Roadmap
+  href: articles/roadmap.md

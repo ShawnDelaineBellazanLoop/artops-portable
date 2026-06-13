@@ -8,6 +8,9 @@
 #   Actions: actions/checkout@v4 · actions/setup-dotnet@v4
 #            actions/upload-pages-artifact@v3 · actions/deploy-pages@v4
 #
+# Template stack: ["default", "modern", "artops-template"]
+#   artops-template/ lives inside docs/ alongside docfx.json
+#
 # Source: https://dotnet.github.io/docfx/ (official pattern, validated 2026-06-12)
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -21,12 +24,11 @@ on:
 
 # Sets permissions of GITHUB_TOKEN for GitHub Pages deployment
 permissions:
-  actions: read
-  pages:   write
+  actions:  read
+  pages:    write
   id-token: write
 
 # Allow only one concurrent deployment — do NOT cancel in-progress runs
-# so production deployments complete properly
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -43,12 +45,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Required for git history in DocFX "Edit this page" links
+          fetch-depth: 0   # Required for git history in DocFX "Edit this page" links
 
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.x  # DocFX 2.78.5 targets .NET 8
+          dotnet-version: 8.x   # DocFX 2.78.5 targets .NET 8
 
       - name: Install / update DocFX (always pulls latest 2.78.x stable)
         run: dotnet tool update -g docfx
@@ -57,6 +59,7 @@ jobs:
         run: docfx --version
 
       - name: Build DocFX documentation site
+        # docfx.json is in docs/ and references artops-template/ relative to itself
         run: docfx docs/docfx.json
 
       - name: Upload Pages artifact
