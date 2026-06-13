@@ -1,0 +1,118 @@
+<svg width="680" height="160" viewBox="0 0 680 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="680" height="160" rx="12" fill="#0d1117"/>
+
+  <!-- ── AGENT 00 ── -->
+  <rect x="8" y="8" width="156" height="144" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="8" y="8" width="156" height="2.5" rx="1.25" fill="#22d3ee" opacity="0.7"/>
+  <text x="86" y="38" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="10" fill="#484f58">00</text>
+  <rect x="52" y="46" width="68" height="20" rx="10"
+        fill="rgba(6,182,212,0.12)" stroke="rgba(6,182,212,0.3)" stroke-width="1"/>
+  <text x="86" y="60" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9.5" font-weight="700" fill="#22d3ee">PLAN</text>
+  <text x="86" y="84" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" font-weight="700" fill="#f0f6fc">PromptCraft</text>
+  <text x="86" y="100" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" font-weight="700" fill="#f0f6fc">Agent</text>
+  <text x="86" y="120" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="9.5" fill="#8b949e">Deliberative</text>
+  <text x="86" y="136" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="8.5" fill="#484f58">prompt_plan_json</text>
+
+  <!-- connector arrow -->
+  <line x1="164" y1="80" x2="176" y2="80" stroke="#30363d" stroke-width="1.5"/>
+  <path d="M172,76 L180,80 L172,84" fill="none" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- ── AGENT 01 ── -->
+  <rect x="178" y="8" width="156" height="144" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="178" y="8" width="156" height="2.5" rx="1.25" fill="#c084fc" opacity="0.7"/>
+  <text x="256" y="38" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="10" fill="#484f58">01</text>
+  <rect x="218" y="46" width="76" height="20" rx="10"
+        fill="rgba(168,85,247,0.12)" stroke="rgba(168,85,247,0.3)" stroke-width="1"/>
+  <text x="256" y="60" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9.5" font-weight="700" fill="#c084fc">MAKE</text>
+  <text x="256" y="84" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" font-weight="700" fill="#f0f6fc">Generation</text>
+  <text x="256" y="100" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" font-weight="700" fill="#f0f6fc">Agent</text>
+  <text x="256" y="120" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="9.5" fill="#8b949e">Reactive</text>
+  <text x="256" y="136" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="8.5" fill="#484f58">make_response_json</text>
+
+  <!-- connector arrow -->
+  <line x1="334" y1="80" x2="346" y2="80" stroke="#30363d" stroke-width="1.5"/>
+  <path d="M342,76 L350,80 L342,84" fill="none" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- ── AGENT 02 ── -->
+  <rect x="348" y="8" width="156" height="144" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="348" y="8" width="156" height="2.5" rx="1.25" fill="#fbbf24" opacity="0.7"/>
+  <text x="426" y="38" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="10" fill="#484f58">02</text>
+  <rect x="384" y="46" width="84" height="20" rx="10"
+        fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.3)" stroke-width="1"/>
+  <text x="426" y="60" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9.5" font-weight="700" fill="#fbbf24">CHECK</text>
+  <text x="426" y="84" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" font-weight="700" fill="#f0f6fc">Portfolio</text>
+  <text x="426" y="100" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" font-weight="700" fill="#f0f6fc">CheckerAgent</text>
+  <text x="426" y="120" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="9.5" fill="#8b949e">Goal-Oriented</text>
+  <text x="426" y="136" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="8.5" fill="#484f58">checker_frame_json</text>
+
+  <!-- connector arrow -->
+  <line x1="504" y1="80" x2="516" y2="80" stroke="#30363d" stroke-width="1.5"/>
+  <path d="M512,76 L520,80 L512,84" fill="none" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- ── AGENT 03 ── -->
+  <rect x="518" y="8" width="154" height="144" rx="8" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="518" y="8" width="154" height="2.5" rx="1.25" fill="#34d399" opacity="0.7"/>
+  <text x="595" y="38" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="10" fill="#484f58">03</text>
+  <rect x="551" y="46" width="88" height="20" rx="10"
+        fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+  <text x="595" y="60" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9.5" font-weight="700" fill="#34d399">REFLECT</text>
+  <text x="595" y="84" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" font-weight="700" fill="#f0f6fc">Monetization</text>
+  <text x="595" y="100" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" font-weight="700" fill="#f0f6fc">Reflector</text>
+  <text x="595" y="120" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="9.5" fill="#8b949e">Learning</text>
+  <text x="595" y="136" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="8.5" fill="#484f58">reflector_output</text>
+</svg>

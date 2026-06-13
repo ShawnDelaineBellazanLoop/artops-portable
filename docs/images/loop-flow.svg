@@ -1,0 +1,295 @@
+<svg width="680" height="874" viewBox="0 0 680 874" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="gradH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#484f58"/>
+    </marker>
+    <marker id="arr-g" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10b981"/>
+    </marker>
+    <marker id="arr-y" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arr-r" viewBox="0 0 10 10" refX="8" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- ── BACKGROUND ── -->
+  <rect width="680" height="874" rx="14" fill="#0d1117"/>
+
+  <!-- ═══════════════════════════════════════════════════════
+       INPUT NODE
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="140" y="20" width="400" height="58" rx="8"
+        fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <!-- gradient top line -->
+  <rect x="140" y="20" width="400" height="2.5" rx="1.25" fill="url(#grad)"/>
+  <text x="340" y="41" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code','Fira Code',ui-monospace,monospace"
+        font-size="11" fill="#8b949e">seed_intent</text>
+  <text x="340" y="57" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code','Fira Code',ui-monospace,monospace"
+        font-size="11" fill="#8b949e">+ earned_constraints.json</text>
+
+  <!-- ── arrow down ── -->
+  <line x1="340" y1="78" x2="340" y2="110"
+        stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ═══════════════════════════════════════════════════════
+       AGENT 00 — PromptCraftAgent — PLAN
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="80" y="115" width="520" height="114" rx="10"
+        fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="80" y="115" width="520" height="2.5" rx="1.25" fill="url(#grad)" opacity="0.55"/>
+
+  <!-- PLAN badge -->
+  <rect x="96" y="131" width="42" height="18" rx="9"
+        fill="rgba(6,182,212,0.14)" stroke="rgba(6,182,212,0.35)" stroke-width="1"/>
+  <text x="117" y="143.5" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9" font-weight="700" fill="#22d3ee" letter-spacing="0.06em">PLAN</text>
+
+  <!-- agent index -->
+  <text x="146" y="143.5"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9" fill="#484f58">· 00</text>
+
+  <!-- pattern badge -->
+  <rect x="470" y="131" width="114" height="18" rx="9"
+        fill="rgba(6,182,212,0.07)" stroke="rgba(6,182,212,0.2)" stroke-width="1"/>
+  <text x="527" y="143.5" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="8.5" fill="#8b949e">2 — Deliberative</text>
+
+  <!-- agent name -->
+  <text x="96" y="172"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="16" font-weight="700" fill="#f0f6fc">PromptCraftAgent</text>
+
+  <!-- description -->
+  <text x="96" y="193"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" fill="#8b949e">Reads earned constraints first · Produces N prompt variants, each testing a hypothesis</text>
+
+  <!-- IO line -->
+  <text x="96" y="215"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="10" fill="#484f58">OUT <tspan fill="#a78bfa">prompt_plan_json</tspan></text>
+
+  <!-- ── arrow + label ── -->
+  <line x1="340" y1="229" x2="340" y2="260"
+        stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="258" y="238" width="164" height="17" rx="8"
+        fill="rgba(167,139,250,0.08)" stroke="rgba(167,139,250,0.18)" stroke-width="1"/>
+  <text x="340" y="250" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9.5" fill="#a78bfa">prompt_plan_json</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       AGENT 01 — GenerationAgent — MAKE
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="80" y="265" width="520" height="114" rx="10"
+        fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="80" y="265" width="520" height="2.5" rx="1.25" fill="url(#grad)" opacity="0.55"/>
+
+  <!-- MAKE badge -->
+  <rect x="96" y="281" width="42" height="18" rx="9"
+        fill="rgba(168,85,247,0.14)" stroke="rgba(168,85,247,0.35)" stroke-width="1"/>
+  <text x="117" y="293.5" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9" font-weight="700" fill="#c084fc" letter-spacing="0.06em">MAKE</text>
+
+  <text x="146" y="293.5"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9" fill="#484f58">· 01</text>
+
+  <rect x="462" y="281" width="122" height="18" rx="9"
+        fill="rgba(168,85,247,0.07)" stroke="rgba(168,85,247,0.2)" stroke-width="1"/>
+  <text x="523" y="293.5" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="8.5" fill="#8b949e">1 — Reactive</text>
+
+  <text x="96" y="322"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="16" font-weight="700" fill="#f0f6fc">GenerationAgent</text>
+
+  <text x="96" y="343"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" fill="#8b949e">Executes prompt plan on image generator · REQUIRES reference photo per EARNED-2026-06-12-001</text>
+
+  <text x="96" y="365"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="10" fill="#484f58">OUT <tspan fill="#a78bfa">make_response_json</tspan></text>
+
+  <!-- ── arrow + label ── -->
+  <line x1="340" y1="379" x2="340" y2="410"
+        stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="250" y="388" width="180" height="17" rx="8"
+        fill="rgba(167,139,250,0.08)" stroke="rgba(167,139,250,0.18)" stroke-width="1"/>
+  <text x="340" y="400" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9.5" fill="#a78bfa">make_response_json</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       AGENT 02 — PortfolioCheckerAgent — CHECK
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="80" y="415" width="520" height="114" rx="10"
+        fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="80" y="415" width="520" height="2.5" rx="1.25" fill="url(#grad)" opacity="0.55"/>
+
+  <!-- CHECK badge -->
+  <rect x="96" y="431" width="46" height="18" rx="9"
+        fill="rgba(245,158,11,0.14)" stroke="rgba(245,158,11,0.35)" stroke-width="1"/>
+  <text x="119" y="443.5" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9" font-weight="700" fill="#fbbf24" letter-spacing="0.06em">CHECK</text>
+
+  <text x="150" y="443.5"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9" fill="#484f58">· 02</text>
+
+  <rect x="454" y="431" width="130" height="18" rx="9"
+        fill="rgba(245,158,11,0.07)" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <text x="519" y="443.5" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="8.5" fill="#8b949e">3 — Goal-Oriented</text>
+
+  <text x="96" y="472"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="16" font-weight="700" fill="#f0f6fc">PortfolioCheckerAgent</text>
+
+  <text x="96" y="493"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" fill="#8b949e">Scores each variant across 10 dimensions · 4 pts each · 40 max · Pass = total ≥ 28 AND brand &gt; 0</text>
+
+  <text x="96" y="515"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="10" fill="#484f58">OUT <tspan fill="#a78bfa">checker_frame_json</tspan></text>
+
+  <!-- ── arrow + label ── -->
+  <line x1="340" y1="529" x2="340" y2="560"
+        stroke="#484f58" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="251" y="538" width="178" height="17" rx="8"
+        fill="rgba(167,139,250,0.08)" stroke="rgba(167,139,250,0.18)" stroke-width="1"/>
+  <text x="340" y="550" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9.5" fill="#a78bfa">checker_frame_json</text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       AGENT 03 — MonetizationReflectorAgent — REFLECT
+  ════════════════════════════════════════════════════════════ -->
+  <rect x="80" y="565" width="520" height="114" rx="10"
+        fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <rect x="80" y="565" width="520" height="2.5" rx="1.25" fill="url(#grad)" opacity="0.55"/>
+
+  <!-- REFLECT badge -->
+  <rect x="96" y="581" width="54" height="18" rx="9"
+        fill="rgba(16,185,129,0.14)" stroke="rgba(16,185,129,0.35)" stroke-width="1"/>
+  <text x="123" y="593.5" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9" font-weight="700" fill="#34d399" letter-spacing="0.06em">REFLECT</text>
+
+  <text x="158" y="593.5"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9" fill="#484f58">· 03</text>
+
+  <rect x="458" y="581" width="126" height="18" rx="9"
+        fill="rgba(16,185,129,0.07)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="521" y="593.5" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="8.5" fill="#8b949e">4 — Learning</text>
+
+  <text x="96" y="622"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="16" font-weight="700" fill="#f0f6fc">MonetizationReflectorAgent</text>
+
+  <text x="96" y="643"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="11.5" fill="#8b949e">Issues verdict · Writes earned constraints on LOOP · Dribbble publish payload on ACCEPT</text>
+
+  <text x="96" y="665"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="10" fill="#484f58">OUT <tspan fill="#a78bfa">reflector_output</tspan>  <tspan fill="#484f58">  (verdict + constraints)</tspan></text>
+
+  <!-- ═══════════════════════════════════════════════════════
+       VERDICT BRANCHES
+  ════════════════════════════════════════════════════════════ -->
+
+  <!-- stem down -->
+  <line x1="340" y1="679" x2="340" y2="712"
+        stroke="#484f58" stroke-width="1.5"/>
+
+  <!-- horizontal branch bar -->
+  <line x1="130" y1="712" x2="550" y2="712"
+        stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- ACCEPT branch -->
+  <line x1="130" y1="712" x2="130" y2="742"
+        stroke="#10b981" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <rect x="46" y="748" width="168" height="68" rx="10"
+        fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" stroke-width="1.5"/>
+  <text x="130" y="774" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="13" font-weight="700" fill="#10b981">ACCEPT</text>
+  <text x="130" y="792" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="10" fill="#8b949e">Publish. Dribbble</text>
+  <text x="130" y="806" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="10" fill="#8b949e">payload ready.</text>
+
+  <!-- LOOP branch -->
+  <line x1="340" y1="712" x2="340" y2="742"
+        stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arr-y)"/>
+  <rect x="256" y="748" width="168" height="68" rx="10"
+        fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.3)" stroke-width="1.5"/>
+  <text x="340" y="774" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="13" font-weight="700" fill="#f59e0b">LOOP</text>
+  <text x="340" y="792" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="10" fill="#8b949e">Re-plan with new</text>
+  <text x="340" y="806" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="10" fill="#8b949e">earned constraints.</text>
+
+  <!-- ESCALATE branch -->
+  <line x1="550" y1="712" x2="550" y2="742"
+        stroke="#ef4444" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <rect x="466" y="748" width="168" height="68" rx="10"
+        fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.3)" stroke-width="1.5"/>
+  <text x="550" y="774" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="13" font-weight="700" fill="#ef4444">ESCALATE</text>
+  <text x="550" y="792" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="10" fill="#8b949e">Human review.</text>
+  <text x="550" y="806" text-anchor="middle"
+        font-family="'Inter','Segoe UI',system-ui,sans-serif"
+        font-size="10" fill="#8b949e">Rethink concept.</text>
+
+  <!-- LOOP feedback arrow back up (right side) -->
+  <path d="M424 782 Q636 782 636 400 Q636 100 580 78"
+        fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5 3"
+        marker-end="url(#arr-y)" opacity="0.5"/>
+  <text x="650" y="398" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="8.5" fill="#f59e0b" opacity="0.7">re-plan</text>
+
+  <!-- ── footer label ── -->
+  <text x="340" y="858" text-anchor="middle"
+        font-family="'JetBrains Mono','Cascadia Code',ui-monospace,monospace"
+        font-size="9" fill="#30363d">ArtOps Cognitive Loop · PMCRO 2.0.0 · Max loops: 3</text>
+</svg>

@@ -1,0 +1,82 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# ArtOps Portable — GitHub Release Automation
+#
+# Trigger: push a tag matching v* (e.g. v1.0.4, v1.1.0, v2.0.0)
+#
+# What it does:
+#   1. Extracts the release notes for this tag from docs/articles/changelog.md
+#   2. Creates a GitHub Release with those notes
+#   3. Attaches a .zip of the skills/ directory as the release asset
+#      (the portable skill pack itself — what operators actually download)
+#
+# Usage:
+#   git tag v1.0.4
+#   git push origin v1.0.4
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: GitHub Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          VERSION="${TAG#v}"
+          echo "tag=$TAG"       >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Tag: $TAG  Version: $VERSION"
+
+      - name: Extract changelog section for this release
+        id: notes
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          CHANGELOG="docs/articles/changelog.md"
+
+          # Pull the section between ## [VERSION] and the next ## heading
+          NOTES=$(awk "/^## \[$VERSION\]/,/^## \[/" "$CHANGELOG" \
+                  | head -n -1 \
+                  | tail -n +2 \
+                  | sed 's/^### /\n### /')
+
+          if [ -z "$NOTES" ]; then
+            NOTES="See [Changelog](https://ShawnDelaineBellazanLoop.github.io/artops-portable/articles/changelog.html) for full release notes."
+          fi
+
+          # Write to file to avoid multiline env-var issues
+          echo "$NOTES" > release_notes.md
+          cat release_notes.md
+
+      - name: Package skills/ as release asset
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          zip -r "artops-portable-skills-v${VERSION}.zip" skills/ \
+            -x "*.DS_Store" -x "__pycache__/*"
+          echo "Asset: artops-portable-skills-v${VERSION}.zip"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: "ArtOps Portable ${{ steps.version.outputs.tag }}"
+          body_path: release_notes.md
+          draft: false
+          prerelease: ${{ contains(steps.version.outputs.tag, '-') }}
+          files: |
+            artops-portable-skills-v${{ steps.version.outputs.version }}.zip

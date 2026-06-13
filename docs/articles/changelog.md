@@ -11,6 +11,24 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [1.0.5] — 2026-06-12 (patch)
+
+**SVG diagrams replace ASCII art. GitHub release workflow added.**
+
+### Added
+- `docs/images/loop-flow.svg` — full loop flow diagram: input node, four agent boxes with phase/pattern badges, JSON frame labels on arrows, color-coded ACCEPT/LOOP/ESCALATE verdict branches, LOOP feedback arrow back to top. Replaces the ASCII `<pre>` block in `index.md`.
+- `docs/images/agent-chain.svg` — horizontal four-card agent chain strip with phase color coding, output labels, and connecting arrows. Displayed above the agent card grid in `index.md`.
+- `.github/workflows/release.yml` — automated GitHub release workflow: triggers on `v*` tags, extracts the relevant changelog section, packages `skills/` as `artops-portable-skills-v{VERSION}.zip`, and creates a GitHub Release. Usage: `git tag v1.0.5 && git push origin v1.0.5`.
+
+### Changed
+- `docs/index.md` — ASCII loop diagram replaced with `![ArtOps Cognitive Loop](images/loop-flow.svg)`. Agent chain SVG added above the HTML card grid.
+- Version bumped to `v1.0.5` in `index.md` hero badge, footer, and `main.js` footer badge.
+
+### Why images instead of ASCII
+DocFX modern renders SVG inline at full resolution with no font/encoding issues. ASCII `<pre>` blocks in dark-mode sites: wrong font rendering, misaligned on some browsers, no color, no brand alignment. The SVG diagrams use the same design tokens as the rest of the site (AO brand colors, monospace font references, phase badge colors).
+
+---
+
 ## [1.0.4] — 2026-06-12 (patch)
 
 **Logo bug fix, CSS selector correction, docs.yml comment clarification.**

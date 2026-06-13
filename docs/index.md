@@ -6,7 +6,7 @@ uid: artops.home
 ---
 
 <div class="hero-banner">
-  <div class="hero-badge">v1.0.4 &nbsp;·&nbsp; PMCRO 2.0.0 &nbsp;·&nbsp; DocFX 2.78.5</div>
+  <div class="hero-badge">v1.0.5 &nbsp;·&nbsp; PMCRO 2.0.0 &nbsp;·&nbsp; DocFX 2.78.5</div>
   <h1 class="hero-title">ArtOps</h1>
   <p class="hero-sub">A four-agent cognitive loop for AI self-portrait art.<br>Plan prompts. Generate images. Check portfolio quality. Reflect and monetize.<br>Runs on any AI platform.</p>
   <div class="hero-ctas">
@@ -54,50 +54,13 @@ The pack is not a tool. It is a **cognitive protocol** — load each agent's `SK
 
 ## The Loop
 
-```
-Seed Concept  +  earned_constraints.json
-        │
-        ▼
-┌─────────────────────────────────────────┐
-│  00  PromptCraftAgent          PLAN     │  Pattern 2 — Deliberative
-│  Reads constraints first.               │
-│  Produces N distinct prompt variants,   │
-│  each testing a hypothesis.             │
-└──────────────────┬──────────────────────┘
-                   │  prompt_plan_json
-                   ▼
-┌─────────────────────────────────────────┐
-│  01  GenerationAgent           MAKE     │  Pattern 1 — Reactive
-│  Executes each prompt on your           │
-│  image generator. REQUIRES              │
-│  reference photo. Records results.      │
-└──────────────────┬──────────────────────┘
-                   │  make_response_json
-                   ▼
-┌─────────────────────────────────────────┐
-│  02  PortfolioCheckerAgent     CHECK    │  Pattern 3 — Goal-Oriented
-│  Scores each variant across 10          │
-│  dimensions (4 pts each, 40 max).       │
-│  Pass = total ≥ 28 AND brand > 0.       │
-└──────────────────┬──────────────────────┘
-                   │  checker_frame_json
-                   ▼
-┌─────────────────────────────────────────┐
-│  03  MonetizationReflectorAgent REFLECT │  Pattern 4 — Learning
-│  Issues verdict. Writes constraints.    │
-│  Dribbble payload on ACCEPT.            │
-└──────────────────┬──────────────────────┘
-                   │
-       ┌───────────┼────────────┐
-       ▼           ▼            ▼
-    ACCEPT       LOOP        ESCALATE
-    Publish.   Re-plan with   Human
-               constraints.   review.
-```
+![ArtOps Cognitive Loop](images/loop-flow.svg)
 
 ---
 
 ## The Four Agents
+
+![Agent Chain](images/agent-chain.svg)
 
 <div class="agent-grid">
   <a class="agent-card" href="articles/agents/00-prompt-craft-agent.md">
@@ -198,4 +161,4 @@ cd artops-portable
 
 ---
 
-*ArtOps Portable v1.0.4 · Built on PMCRO 2.0.0 · Tooensure LLC · 2026*
+*ArtOps Portable v1.0.5 · Built on PMCRO 2.0.0 · Tooensure LLC · 2026*
